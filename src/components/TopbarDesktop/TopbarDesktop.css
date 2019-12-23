@@ -41,7 +41,7 @@
   /* Size */
   width: 100%;
   height: var(--topbarHeightDesktop);
-
+  
   /* Layout for child components */
   display: flex;
   flex-direction: row;
@@ -50,7 +50,7 @@
   padding: 0 12px 0 0;
 
   /* fill */
-  background-color: var(--matterColorLight);
+  background-color: var(--marketplaceColorBackground);
 
   /* shadows */
   box-shadow: var(--boxShadowLight);
@@ -64,17 +64,17 @@
 .logoLink {
   @apply --TopbarDesktop_linkHover;
   flex-shrink: 0;
-  padding: 21px 24px 21px 24px;
+  /*padding: 21px 24px 21px 24px;*/
   height: 100%;
 
   @media (--viewportLarge) {
-    padding: 21px 36px 21px 36px;
+  /*  padding: 21px 36px 21px 36px;*/
   }
 }
 
 .logo {
   /* If height is increased, change link paddings accordingly */
-  height: 27px;
+  /*height: 27px;
 
   /* Good aspect ratio should be less than 160/27 (width/height) */
   /* NOTE: extremely wide logos, need special handling. */
@@ -91,7 +91,7 @@
   margin-right: 24px;
   border-left-style: solid;
   border-left-width: 1px;
-  border-left-color: var(--matterColorNegative);
+  border-left-color: var(--marketplaceColorBackground);
 
   @media (--viewportLarge) {
     padding-left: 0;
@@ -101,7 +101,7 @@
 .search {
   @apply --marketplaceH4FontStyles;
   @apply --TopbarDesktop_label;
-  color: var(--matterColor);
+  color: var(--marketplaceColorBackground);
 }
 
 .topbarSearchWithLeftPadding {
