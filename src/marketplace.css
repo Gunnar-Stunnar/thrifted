@@ -35,8 +35,10 @@
     background-position: center center;
 
     @media (--viewportLarge) {
-      border-radius: 40px;
+      /*border-radius: 40px;
       border: solid 36px var(--matterColorBright);
+      Puts white boarder around images in larger views 
+      */ 
     }
   }
 
@@ -46,6 +48,7 @@
   --marketplaceColorLight: #fbc02d;
   --marketplaceColorDark: #ff7b3a;
   --marketplaceColorBackground: #e74135;
+  --MarketPlaceColorNavyBlue: #0c3b71;
 
   /* Used with inline CSS SVGs */
   --marketplaceColorEncoded: %23c0392b;

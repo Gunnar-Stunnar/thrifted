@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 
-import { NamedLink } from '../../components';
+import { NamedLink, Button } from '../../components';
 
 import css from './SectionHowItWorks.css';
 
@@ -51,6 +51,11 @@ const SectionHowItWorks = props => {
         <NamedLink name="NewListingPage">
           <FormattedMessage id="SectionHowItWorks.createListingLink" />
         </NamedLink>
+      </div>
+      <div className={css.createListingLink}>
+        <Button name="Store">
+          <FormattedMessage id="SectionHowItWorks.goToStore" />
+        </Button>
       </div>
     </div>
   );

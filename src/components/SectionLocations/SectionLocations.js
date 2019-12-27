@@ -8,9 +8,8 @@ import { NamedLink } from '../../components';
 
 import css from './SectionLocations.css';
 
-import CUImage from './images/location_CU.jpg';
 
-
+//https://picsum.photos/200
 class LocationImage extends Component {
   render() {
     const { alt, ...rest } = this.props;
@@ -19,7 +18,20 @@ class LocationImage extends Component {
 }
 const LazyImage = lazyLoadWithDimensions(LocationImage);
 
-const locationLink = (name, image, searchQuery) => {
+/*const ItemCatagory = (name, items, catagoryLink) => {
+  const itemsRender = items.map(i => Item(i.name, i.image, i.searchQuery));
+  return (
+    <div>
+      <h2 className={css.name}>{name}</h2>
+      <div className={css.catagoryContainer}>
+      {itemsRender}
+      <NamedLink name="SearchPage" to={catagoryLink} className={css.moreLink}>MORE...</NamedLink>
+      </div>
+    </div>
+  );
+}
+
+const Item = (name, image, searchQuery) => {
   const nameText = <span className={css.locationName}>{name}</span>;
   return (
     <NamedLink name="SearchPage" to={{ search: searchQuery }} className={css.location}>
@@ -31,12 +43,36 @@ const locationLink = (name, image, searchQuery) => {
       <div className={css.linkText}>
         <FormattedMessage
           id="SectionLocations.listingsInLocation"
-          values={{ location: nameText }}
+          values={{ itemName: nameText }}
         />
       </div>
     </NamedLink>
   );
 };
+Build out actual items
+*/
+
+const catagoryObjects = (catagories) =>
+{
+
+return catagories.map(i => {
+return(
+  <NamedLink name="SearchPage" to={{ search: i.searchQuery }} className={css.location}>
+      <div className={css.imageWrapper}>
+        <div className={css.aspectWrapper}>
+          <LazyImage src={i.img} alt={i.name} className={css.locationImage} />
+        </div>
+      </div>
+      <div className={css.linkText}>
+        <FormattedMessage
+          id="SectionLocations.listingsInLocation"
+          values={{ itemName: i.name }}
+        />
+      </div>
+  </NamedLink>
+)});
+
+}
 
 const SectionLocations = props => {
   const { rootClassName, className } = props;
@@ -49,11 +85,34 @@ const SectionLocations = props => {
         <FormattedMessage id="SectionLocations.title" />
       </div>
       <div className={css.locations}>
-        {locationLink(
-          'CU boulder',
-          CUImage,
-          '?address=Helsinki%2C%20Finland&bounds=60.2978389%2C25.254484899999966%2C59.9224887%2C24.782875800000056&origin=60.16985569999999%2C24.93837910000002'
-        )}
+        {catagoryObjects([
+          {
+            name:"Formal Attire",
+            img:"https://picsum.photos/200",
+            searchQuery:"/"
+          },          
+          {
+            name:"Game Day Gear",
+            img:"https://picsum.photos/200",
+            searchQuery:"/"
+          },
+          {
+            name:"Wheels",
+            img:"https://picsum.photos/200",
+            searchQuery:"/"
+          },
+          {
+            name:"Climb",
+            img:"https://picsum.photos/200",
+            searchQuery:"/"
+          },
+          {
+            name:"Snow",
+            img:"https://picsum.photos/200",
+            searchQuery:"/"
+          }
+        ])}
+        <NamedLink name="SearchPage" to={"/"} className={css.moreLink}>MORE</NamedLink>
       </div>
     </div>
   );
