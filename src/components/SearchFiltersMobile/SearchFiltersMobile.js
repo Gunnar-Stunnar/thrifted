@@ -14,7 +14,7 @@ import {
   KeywordFilter,
   PriceFilter,
   SelectSingleFilter,
-  SelectMultipleFilter,
+  //SelectMultipleFilter,
   BookingDateRangeFilter,
 } from '../../components';
 import { propTypes } from '../../util/types';
@@ -193,7 +193,7 @@ class SearchFiltersMobileComponent extends Component {
       onManageDisableScrolling,
       selectedFiltersCount,
       categoryFilter,
-      amenitiesFilter,
+      //amenitiesFilter,
       priceFilter,
       dateRangeFilter,
       keywordFilter,
@@ -235,6 +235,7 @@ class SearchFiltersMobileComponent extends Component {
       />
     ) : null;
 
+    /*
     const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
 
     const initialAmenities = this.initialValues(amenitiesFilter.paramName);
@@ -251,6 +252,8 @@ class SearchFiltersMobileComponent extends Component {
         initialValues={initialAmenities}
       />
     ) : null;
+
+     */
 
     const initialPriceRange = this.initialPriceRangeValue(priceFilter.paramName);
 
@@ -331,7 +334,8 @@ class SearchFiltersMobileComponent extends Component {
             <div className={css.filtersWrapper}>
               {keywordFilterElement}
               {categoryFilterElement}
-              {amenitiesFilterElement}
+              {//amenitiesFilterElement
+              }
               {priceFilterElement}
               {dateRangeFilterElement}
             </div>

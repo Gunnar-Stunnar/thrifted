@@ -7,7 +7,8 @@
 }
 
 .darkSkin {
-  background-color: var(--matterColor);
+  background-color: var(--MarketPlaceColorTurquois);
+  border-top: 1px solid black;
 }
 
 .tab {

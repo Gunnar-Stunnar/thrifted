@@ -14,7 +14,7 @@ import { parse, stringify } from '../../util/urlHelpers';
 import { propTypes } from '../../util/types';
 import { getListingsById } from '../../ducks/marketplaceData.duck';
 import { manageDisableScrolling, isScrollingDisabled } from '../../ducks/UI.duck';
-import { SearchMap, ModalInMobile, Page } from '../../components';
+import { Page } from '../../components';
 import { TopbarContainer } from '../../containers';
 
 import { searchListings, searchMapListings, setActiveListing } from './SearchPage.duck';
@@ -54,7 +54,7 @@ export class SearchPageComponent extends Component {
   filters() {
     const {
       categories,
-      amenities,
+      //amenities,
       priceFilterConfig,
       dateRangeFilterConfig,
       keywordFilterConfig,
@@ -69,10 +69,6 @@ export class SearchPageComponent extends Component {
       categoryFilter: {
         paramName: 'pub_category',
         options: categories,
-      },
-      amenitiesFilter: {
-        paramName: 'pub_amenities',
-        options: amenities,
       },
       priceFilter: {
         paramName: 'price',
@@ -147,14 +143,12 @@ export class SearchPageComponent extends Component {
       intl,
       listings,
       location,
-      mapListings,
       onManageDisableScrolling,
       pagination,
       scrollingDisabled,
       searchInProgress,
       searchListingsError,
       searchParams,
-      activeListingId,
       onActivateListing,
     } = this.props;
     // eslint-disable-next-line no-unused-vars
@@ -176,17 +170,17 @@ export class SearchPageComponent extends Component {
 
     const validQueryParams = validURLParamsForExtendedData(searchInURL, filters);
 
-    const isWindowDefined = typeof window !== 'undefined';
-    const isMobileLayout = isWindowDefined && window.innerWidth < MODAL_BREAKPOINT;
-    const shouldShowSearchMap =
-      !isMobileLayout || (isMobileLayout && this.state.isSearchMapOpenOnMobile);
+    //const isWindowDefined = typeof window !== 'undefined';
+    //const isMobileLayout = isWindowDefined && window.innerWidth < MODAL_BREAKPOINT;
+    //const shouldShowSearchMap =
+    //  !isMobileLayout || (isMobileLayout && this.state.isSearchMapOpenOnMobile);
 
     const onMapIconClick = () => {
       this.useLocationSearchBounds = true;
       this.setState({ isSearchMapOpenOnMobile: true });
     };
 
-    const { address, bounds, origin } = searchInURL || {};
+    const { address } = searchInURL || {};
     const { title, description, schema } = createSearchResultSchema(listings, address, intl);
 
     // Set topbar class based on if a modal is open in
@@ -227,39 +221,12 @@ export class SearchPageComponent extends Component {
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
-              amenitiesFilter: filters.amenitiesFilter,
+              //amenitiesFilter: filters.amenitiesFilter,
               priceFilter: filters.priceFilter,
               dateRangeFilter: filters.dateRangeFilter,
               keywordFilter: filters.keywordFilter,
             }}
           />
-          <ModalInMobile
-            className={css.mapPanel}
-            id="SearchPage.map"
-            isModalOpenOnMobile={this.state.isSearchMapOpenOnMobile}
-            onClose={() => this.setState({ isSearchMapOpenOnMobile: false })}
-            showAsModalMaxWidth={MODAL_BREAKPOINT}
-            onManageDisableScrolling={onManageDisableScrolling}
-          >
-            <div className={css.mapWrapper}>
-              {shouldShowSearchMap ? (
-                <SearchMap
-                  reusableContainerClassName={css.map}
-                  activeListingId={activeListingId}
-                  bounds={bounds}
-                  center={origin}
-                  isSearchMapOpenOnMobile={this.state.isSearchMapOpenOnMobile}
-                  location={location}
-                  listings={mapListings || []}
-                  onMapMoveEnd={this.onMapMoveEnd}
-                  onCloseAsModal={() => {
-                    onManageDisableScrolling('SearchPage.map', false);
-                  }}
-                  messages={intl.messages}
-                />
-              ) : null}
-            </div>
-          </ModalInMobile>
         </div>
       </Page>
     );
@@ -275,7 +242,7 @@ SearchPageComponent.defaultProps = {
   searchParams: {},
   tab: 'listings',
   categories: config.custom.categories,
-  amenities: config.custom.amenities,
+  //amenities: config.custom.amenities,
   priceFilterConfig: config.custom.priceFilterConfig,
   dateRangeFilterConfig: config.custom.dateRangeFilterConfig,
   keywordFilterConfig: config.custom.keywordFilterConfig,
@@ -295,7 +262,7 @@ SearchPageComponent.propTypes = {
   searchParams: object,
   tab: oneOf(['filters', 'listings', 'map']).isRequired,
   categories: array,
-  amenities: array,
+  //amenities: array,
   priceFilterConfig: shape({
     min: number.isRequired,
     max: number.isRequired,

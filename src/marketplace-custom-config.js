@@ -1,7 +1,7 @@
 /*
  * Marketplace specific configuration.
  */
-
+/*
 export const amenities = [
   {
     key: 'towels',
@@ -35,14 +35,81 @@ export const amenities = [
     key: 'own_food_allowed',
     label: 'Own food allowed',
   },
+];*/
+
+export const size = [
+  {
+    key:"XXS",
+    label:'XXS'
+  },
+  {
+    key:"XS",
+    label:'XS'
+  },
+  {
+    key:"small",
+    label:'small'
+  },
+  {
+    key:"Medium",
+    label:'Medium'
+  },
+  {
+    key:"Large",
+    label:'Large'
+  },
+  {
+    key:"XL",
+    label:'XL'
+  },
+  {
+    key:"XXL",
+    label:'XXL'
+  },
+  {
+    key:"One Size",
+    label:'One Size'
+  },
+
 ];
 
-export const categories = [
-  { key: 'smoke', label: 'Smoke' },
-  { key: 'electric', label: 'Electric' },
-  { key: 'wood', label: 'Wood' },
-  { key: 'other', label: 'Other' },
+export const condition = [
+  {
+    key:"Perfect",
+    label:'Perfect'
+  },
+  {
+    key:"Great",
+    label:'Great'
+  },
+  {
+    key:"Good",
+    label:'Good'
+  },
+  {
+    key:"Lightly Used",
+    label:'Lightly Used'
+  },
+  {
+    key:"Used",
+    label:'Used'
+  },
 ];
+
+export const shoe_size = {
+  Min:0,
+  Max:20,
+  step:1
+}
+
+export const categories = [
+  { key: 'Men', label: 'Men\'s' },
+  { key: 'Women', label: 'Women\'s' },
+  { key: 'Gear', label: 'Gear (Outdoor/Sporting)' },
+  { key: 'party', label: 'Costumes + Party' },
+];
+
+
 
 // Price filter configuration
 // Note: unlike most prices this is not handled in subunits
