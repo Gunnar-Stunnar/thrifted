@@ -12,7 +12,7 @@ import config from '../../config';
 import { Form, PrimaryButton, FieldDateRangeInput } from '../../components';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
-import css from './BookingDatesForm.css';
+import css from './BiddingForm.css';
 
 const identity = v => v;
 
@@ -229,7 +229,7 @@ BookingDatesFormComponent.propTypes = {
   endDatePlaceholder: string,
 };
 
-const BookingDatesForm = compose(injectIntl)(BookingDatesFormComponent);
-BookingDatesForm.displayName = 'BookingDatesForm';
+const BiddingForm = compose(injectIntl)(BookingDatesFormComponent);
+BiddingForm.displayName = 'BiddingForm';
 
-export default BookingDatesForm;
+export default BiddingForm;

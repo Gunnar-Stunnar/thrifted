@@ -99,12 +99,12 @@ export const condition = [
 export const shoe_size = {
   Min:0,
   Max:20,
-  step:1
+  step:0.5
 }
 
 export const categories = [
-  { key: 'Men', label: 'Men\'s' },
-  { key: 'Women', label: 'Women\'s' },
+  { key: 'Men', label: 'Men\'s Clothing' },
+  { key: 'Women', label: 'Women\'s Clothing' },
   { key: 'Gear', label: 'Gear (Outdoor/Sporting)' },
   { key: 'party', label: 'Costumes + Party' },
 ];

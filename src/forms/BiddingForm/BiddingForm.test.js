@@ -7,7 +7,7 @@ import { fakeIntl } from '../../util/test-data';
 import { LINE_ITEM_NIGHT } from '../../util/types';
 import { dateFromAPIToLocalNoon } from '../../util/dates';
 import { BookingBreakdown } from '../../components';
-import { BookingDatesFormComponent } from './BookingDatesForm';
+import { BookingDatesFormComponent } from './BiddingForm';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
 const { Money } = sdkTypes;

@@ -37,7 +37,7 @@ import {
   LayoutWrapperMain,
   LayoutWrapperFooter,
   Footer,
-  BookingPanel,
+  BiddingPanel,
 } from '../../components';
 import { TopbarContainer, NotFoundPage } from '../../containers';
 
@@ -246,7 +246,7 @@ export class ListingPageComponent extends Component {
     );
 
     const bookingTitle = (
-      <FormattedMessage id="ListingPage.bookingTitle" values={{ title: richTitle }} />
+      <FormattedMessage id="ListingPage.BidTitle" values={{ title: richTitle }} />
     );
     const bookingSubTitle = intl.formatMessage({ id: 'ListingPage.bookingSubTitle' });
 
@@ -399,23 +399,7 @@ export class ListingPageComponent extends Component {
           <LayoutWrapperTopbar>{topbar}</LayoutWrapperTopbar>
           <LayoutWrapperMain>
             <div>
-              <SectionImages
-                title={title}
-                listing={currentListing}
-                isOwnListing={isOwnListing}
-                editParams={{
-                  id: listingId.uuid,
-                  slug: listingSlug,
-                  type: listingType,
-                  tab: listingTab,
-                }}
-                imageCarouselOpen={this.state.imageCarouselOpen}
-                onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
-                handleViewPhotosClick={handleViewPhotosClick}
-                onManageDisableScrolling={onManageDisableScrolling}
-              />
               <div className={css.contentContainer}>
-                <SectionAvatar user={currentAuthor} params={params} />
                 <div className={css.mainContent}>
                   <SectionHeading
                     priceTitle={priceTitle}
@@ -426,15 +410,24 @@ export class ListingPageComponent extends Component {
                     showContactUser={showContactUser}
                     onContactUser={this.onContactUser}
                   />
+                  <SectionImages
+                    title={title}
+                    listing={currentListing}
+                    isOwnListing={isOwnListing}
+                    editParams={{
+                      id: listingId.uuid,
+                      slug: listingSlug,
+                      type: listingType,
+                      tab: listingTab,
+                    }}
+                    imageCarouselOpen={this.state.imageCarouselOpen}
+                    onImageCarouselClose={() => this.setState({ imageCarouselOpen: false })}
+                    handleViewPhotosClick={handleViewPhotosClick}
+                    onManageDisableScrolling={onManageDisableScrolling}
+                  />
 
                     <SectionDescriptionMaybe description={description}/>
 
-                    <SectionRulesMaybe publicData={publicData} />
-                    <SectionMapMaybe
-                    geolocation={geolocation}
-                    publicData={publicData}
-                    listingId={currentListing.id}
-                    />
 
                   <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
                   <SectionHostMaybe
@@ -451,7 +444,7 @@ export class ListingPageComponent extends Component {
                     onManageDisableScrolling={onManageDisableScrolling}
                   />
                 </div>
-                <BookingPanel
+                <BiddingPanel
                   className={css.bookingPanel}
                   listing={currentListing}
                   isOwnListing={isOwnListing}

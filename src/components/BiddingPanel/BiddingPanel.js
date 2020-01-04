@@ -10,9 +10,9 @@ import { formatMoney } from '../../util/currency';
 import { parse, stringify } from '../../util/urlHelpers';
 import config from '../../config';
 import { ModalInMobile, Button } from '../../components';
-import { BookingDatesForm } from '../../forms';
+import { BiddingForm } from '../../forms';
 
-import css from './BookingPanel.css';
+import css from './BiddingPanel.css';
 
 // This defines when ModalInMobile shows content as Modal
 const MODAL_BREAKPOINT = 1023;
@@ -47,7 +47,7 @@ const closeBookModal = (history, location) => {
   history.push(`${pathname}${searchString}`, state);
 };
 
-const BookingPanel = props => {
+const BiddingPanel = props => {
   const {
     rootClassName,
     className,
@@ -115,7 +115,7 @@ const BookingPanel = props => {
           {subTitleText ? <div className={css.bookingHelp}>{subTitleText}</div> : null}
         </div>
         {showBookingDatesForm ? (
-          <BookingDatesForm
+          <BiddingForm
             className={css.bookingForm}
             formId="BookingPanel"
             submitButtonWrapperClassName={css.bookingDatesSubmitButtonWrapper}
@@ -155,7 +155,7 @@ const BookingPanel = props => {
   );
 };
 
-BookingPanel.defaultProps = {
+BiddingPanel.defaultProps = {
   rootClassName: null,
   className: null,
   titleClassName: null,
@@ -166,7 +166,7 @@ BookingPanel.defaultProps = {
   fetchTimeSlotsError: null,
 };
 
-BookingPanel.propTypes = {
+BiddingPanel.propTypes = {
   rootClassName: string,
   className: string,
   titleClassName: string,
@@ -196,4 +196,4 @@ BookingPanel.propTypes = {
 export default compose(
   withRouter,
   injectIntl
-)(BookingPanel);
+)(BiddingPanel);

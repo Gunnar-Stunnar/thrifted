@@ -119,7 +119,7 @@ export { default as Avatar, AvatarMedium, AvatarLarge } from './Avatar/Avatar';
 export { default as BookingBreakdown } from './BookingBreakdown/BookingBreakdown';
 export { default as BookingDateRangeFilter } from './BookingDateRangeFilter/BookingDateRangeFilter';
 export { default as BookingTimeInfo } from './BookingTimeInfo/BookingTimeInfo';
-export { default as BookingPanel } from './BookingPanel/BookingPanel';
+export { default as BiddingPanel } from './BiddingPanel/BiddingPanel';
 export { default as Discussion } from './Discussion/Discussion';
 export { default as FilterPlain } from './FilterPlain/FilterPlain';
 export { default as FilterPopup } from './FilterPopup/FilterPopup';
@@ -158,9 +158,9 @@ export { default as TermsOfService } from './TermsOfService/TermsOfService';
 export { default as EditListingAvailabilityPanel } from './EditListingAvailabilityPanel/EditListingAvailabilityPanel';
 export { default as EditListingDescriptionPanel } from './EditListingDescriptionPanel/EditListingDescriptionPanel';
 export { default as EditListingFeaturesPanel } from './EditListingFeaturesPanel/EditListingFeaturesPanel';
-export { default as EditListingLocationPanel } from './EditListingLocationPanel/EditListingLocationPanel';
+export { default as EditListingTagsPanel} from './EditListingTagsPanel/EditListingTagsPanel'
 export { default as EditListingPhotosPanel } from './EditListingPhotosPanel/EditListingPhotosPanel';
-export { default as EditListingPoliciesPanel } from './EditListingPoliciesPanel/EditListingPoliciesPanel';
+
 export { default as EditListingPricingPanel } from './EditListingPricingPanel/EditListingPricingPanel';
 export { default as EditListingWizard } from './EditListingWizard/EditListingWizard';
 export { default as Footer } from './Footer/Footer';

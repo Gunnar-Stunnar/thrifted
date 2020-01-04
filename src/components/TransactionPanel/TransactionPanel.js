@@ -24,7 +24,7 @@ import { isMobileSafari } from '../../util/userAgent';
 import { formatMoney } from '../../util/currency';
 import {
   AvatarLarge,
-  BookingPanel,
+  BiddingPanel,
   NamedLink,
   ReviewModal,
   UserDisplayName,
@@ -432,7 +432,7 @@ export class TransactionPanelComponent extends Component {
                 showAddress={stateData.showAddress}
               />
               {stateData.showBookingPanel ? (
-                <BookingPanel
+                <BiddingPanel
                   className={css.bookingPanel}
                   titleClassName={css.bookingTitle}
                   isOwnListing={false}

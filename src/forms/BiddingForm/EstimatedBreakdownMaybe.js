@@ -35,7 +35,7 @@ import { LINE_ITEM_DAY, LINE_ITEM_NIGHT, LINE_ITEM_UNITS, DATE_TYPE_DATE } from 
 import { unitDivisor, convertMoneyToNumber, convertUnitToSubUnit } from '../../util/currency';
 import { BookingBreakdown } from '../../components';
 
-import css from './BookingDatesForm.css';
+import css from './BiddingForm.css';
 
 const { Money, UUID } = sdkTypes;
 

@@ -9,9 +9,9 @@ import { propTypes } from '../../util/types';
 import config from '../../config';
 import { Button, FieldCheckboxGroup, Form } from '../../components';
 
-import css from './EditListingFeaturesForm.css';
+import css from './EditListingTagsForm.css';
 
-const EditListingFeaturesFormComponent = props => (
+const EditListingTagsFormComponent = props => (
   <FinalForm
     {...props}
     mutators={{ ...arrayMutators }}
@@ -57,7 +57,7 @@ const EditListingFeaturesFormComponent = props => (
             className={css.features}
             id={name}
             name={name}
-            options={config.custom.condition}
+            options={config.custom.size}
           />
 
           <Button
@@ -75,13 +75,13 @@ const EditListingFeaturesFormComponent = props => (
   />
 );
 
-EditListingFeaturesFormComponent.defaultProps = {
+EditListingTagsFormComponent.defaultProps = {
   rootClassName: null,
   className: null,
   fetchErrors: null,
 };
 
-EditListingFeaturesFormComponent.propTypes = {
+EditListingTagsFormComponent.propTypes = {
   rootClassName: string,
   className: string,
   name: string.isRequired,
@@ -97,6 +97,6 @@ EditListingFeaturesFormComponent.propTypes = {
   }),
 };
 
-const EditListingFeaturesForm = EditListingFeaturesFormComponent;
+const EditListingTagsForm = EditListingTagsFormComponent;
 
-export default EditListingFeaturesForm;
+export default EditListingTagsForm;

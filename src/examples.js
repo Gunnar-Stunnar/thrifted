@@ -3,7 +3,7 @@ import * as ActivityFeed from './components/ActivityFeed/ActivityFeed.example';
 import * as AddImages from './components/AddImages/AddImages.example';
 import * as Avatar from './components/Avatar/Avatar.example';
 import * as BookingBreakdown from './components/BookingBreakdown/BookingBreakdown.example';
-import * as BookingPanel from './components/BookingPanel/BookingPanel.example';
+import * as BookingPanel from './components/BiddingPanel/BiddingPanel.example';
 import * as BookingDateRangeFilter from './components/BookingDateRangeFilter/BookingDateRangeFilter.example';
 import * as BookingTimeInfo from './components/BookingTimeInfo/BookingTimeInfo.example';
 import * as Button from './components/Button/Button.example';
@@ -73,7 +73,7 @@ import * as UserCard from './components/UserCard/UserCard.example';
 import * as UserDisplayName from './components/UserDisplayName/UserDisplayName.example';
 
 // forms
-import * as BookingDatesForm from './forms/BookingDatesForm/BookingDatesForm.example';
+import * as BookingDatesForm from './forms/BiddingForm/BiddingForm.example';
 import * as EditListingAvailabilityForm from './forms/EditListingAvailabilityForm/EditListingAvailabilityForm.example';
 import * as EditListingDescriptionForm from './forms/EditListingDescriptionForm/EditListingDescriptionForm.example';
 import * as EditListingFeaturesForm from './forms/EditListingFeaturesForm/EditListingFeaturesForm.example';
