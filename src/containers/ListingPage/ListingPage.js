@@ -101,15 +101,11 @@ export class ListingPageComponent extends Component {
     const listingId = new UUID(params.id);
     const listing = getListing(listingId);
 
-    const { bookingDates, ...bookingData } = values;
+    const { price, ...priceData } = values;
 
     const initialValues = {
       listing,
-      bookingData,
-      bookingDates: {
-        bookingStart: bookingDates.startDate,
-        bookingEnd: bookingDates.endDate,
-      },
+      //bid:priceData,
       confirmPaymentError: null,
     };
 
@@ -189,7 +185,8 @@ export class ListingPageComponent extends Component {
       timeSlots,
       fetchTimeSlotsError,
       categoriesConfig,
-      amenitiesConfig,
+      conditionConfig,
+      sizeConfig
     } = this.props;
 
     const listingId = new UUID(rawParams.id);
@@ -230,7 +227,6 @@ export class ListingPageComponent extends Component {
 
     const {
       description = '',
-      geolocation = null,
       price = null,
       title = '',
       publicData,
@@ -318,13 +314,14 @@ export class ListingPageComponent extends Component {
 
     const currentAuthor = authorAvailable ? currentListing.author : null;
     const ensuredAuthor = ensureUser(currentAuthor);
-
     // When user is banned or deleted the listing is also deleted.
     // Because listing can be never showed with banned or deleted user we don't have to provide
     // banned or deleted display names for the function
     const authorDisplayName = userDisplayNameAsString(ensuredAuthor, '');
 
     const { formattedPrice, priceTitle } = priceData(price, intl);
+
+    console.log(currentListing);
 
     const handleBookingSubmit = values => {
       const isCurrentlyClosed = currentListing.attributes.state === LISTING_STATE_CLOSED;
@@ -425,11 +422,24 @@ export class ListingPageComponent extends Component {
                     handleViewPhotosClick={handleViewPhotosClick}
                     onManageDisableScrolling={onManageDisableScrolling}
                   />
+                <div className={css.featureContainer}>
+                  {
+                    /*
+                    To add a new section feature, add its config  and make sure its in the public data and follow the sectionFeatures bellow V
+                     */
+                  }
+                    <SectionFeaturesMaybe
+                      options={conditionConfig} publicData={publicData} itemsFeatureName={publicData.condition} FeatureNameId={'ListingPage.featuresTitleCondition'}
+                    />
+                    <SectionFeaturesMaybe
+                      options={sizeConfig} publicData={publicData} itemsFeatureName={publicData.size} FeatureNameId={'ListingPage.featuresTitleSize'}
+                    />
+                </div>
+                  <SectionDescriptionMaybe description={description}/>
 
-                    <SectionDescriptionMaybe description={description}/>
-
-
-                  <SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
+                  {
+                    //<SectionReviews reviews={reviews} fetchReviewsError={fetchReviewsError} />
+                  }
                   <SectionHostMaybe
                     title={title}
                     listing={currentListing}
@@ -480,7 +490,8 @@ ListingPageComponent.defaultProps = {
   fetchTimeSlotsError: null,
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
-  amenitiesConfig: config.custom.amenities,
+  sizeConfig: config.custom.size,
+  conditionConfig: config.custom.condition
 };
 
 ListingPageComponent.propTypes = {
@@ -519,9 +530,10 @@ ListingPageComponent.propTypes = {
   sendEnquiryError: propTypes.error,
   onSendEnquiry: func.isRequired,
   onInitializeCardPaymentData: func.isRequired,
-
+  sizeConfig: array,
+  conditionConfig: array,
   categoriesConfig: array,
-  amenitiesConfig: array,
+  conConfig: array,
 };
 
 const mapStateToProps = state => {

@@ -5,18 +5,22 @@ import { Form as FinalForm } from 'react-final-form';
 import { FormattedMessage, intlShape, injectIntl } from '../../util/reactIntl';
 import classNames from 'classnames';
 import moment from 'moment';
-import { required, bookingDatesRequired, composeValidators } from '../../util/validators';
+import * as validators from '../../util/validators';
 import { START_DATE, END_DATE } from '../../util/dates';
 import { propTypes } from '../../util/types';
 import config from '../../config';
-import { Form, PrimaryButton, FieldDateRangeInput } from '../../components';
+import { Form, PrimaryButton, FieldCurrencyInput } from '../../components';
 import EstimatedBreakdownMaybe from './EstimatedBreakdownMaybe';
 
 import css from './BiddingForm.css';
+import {formatMoney} from "../../util/currency";
+import {types as sdkTypes} from "../../util/sdkLoader";
+
+const { Money } = sdkTypes;
 
 const identity = v => v;
 
-export class BookingDatesFormComponent extends Component {
+export class BiddingFormComponent extends Component {
   constructor(props) {
     super(props);
     this.state = { focusedInput: null };
@@ -35,14 +39,8 @@ export class BookingDatesFormComponent extends Component {
   // focus on that input, otherwise continue with the
   // default handleSubmit function.
   handleFormSubmit(e) {
-    const { startDate, endDate } = e.bookingDates || {};
-    if (!startDate) {
-      e.preventDefault();
-      this.setState({ focusedInput: START_DATE });
-    } else if (!endDate) {
-      e.preventDefault();
-      this.setState({ focusedInput: END_DATE });
-    } else {
+    //console.log(e);
+    if (!e.price) {
       this.props.onSubmit(e);
     }
   }
@@ -133,14 +131,14 @@ export class BookingDatesFormComponent extends Component {
               <EstimatedBreakdownMaybe bookingData={bookingData} />
             </div>
           ) : null;
-
+/*
           const dateFormatOptions = {
             weekday: 'short',
             month: 'short',
             day: 'numeric',
           };
 
-          const now = moment();
+                    const now = moment();
           const today = now.startOf('day').toDate();
           const tomorrow = now
             .startOf('day')
@@ -153,10 +151,7 @@ export class BookingDatesFormComponent extends Component {
           const submitButtonClasses = classNames(
             submitButtonWrapperClassName || css.submitButtonWrapper
           );
-
-          return (
-            <Form onSubmit={handleSubmit} className={classes}>
-              {timeSlotsError}
+              Old Date Forms
               <FieldDateRangeInput
                 className={css.bookingDates}
                 name="bookingDates"
@@ -177,6 +172,55 @@ export class BookingDatesFormComponent extends Component {
                   bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
                 )}
               />
+*/
+          const translationKey = 'BiddingForm.translationKey';
+
+          const submitButtonClasses = classNames(
+            submitButtonWrapperClassName || css.submitButtonWrapper);
+
+          const pricePerUnitMessage = intl.formatMessage({
+            id: translationKey,
+          });
+
+          const priceRequired = validators.required(
+            intl.formatMessage({
+              id: 'EditListingPricingForm.priceRequired',
+            })
+          );
+          const minPrice = new Money(config.listingMinimumPriceSubUnits, config.currency);
+          const minPriceRequired = validators.moneySubUnitAmountAtLeast(
+            intl.formatMessage(
+              {
+                id: 'EditListingPricingForm.priceTooLow',
+              },
+              {
+                minPrice: formatMoney(intl, minPrice),
+              }
+            ),
+            config.listingMinimumPriceSubUnits
+          );
+
+          const priceValidators = config.listingMinimumPriceSubUnits
+            ? validators.composeValidators(priceRequired, minPriceRequired)
+            : priceRequired;
+
+          const placeholder = intl.formatMessage({id:"BiddingForm.bidPlaceholder"});
+
+          return (
+            <Form onSubmit={handleSubmit} className={classes}>
+              {
+                /*
+                <FieldCurrencyInput
+                  id="price"
+                  name="price"
+                  className={css.priceInput}
+                  autoFocus
+                  label={pricePerUnitMessage}
+                  placeholder={placeholder}
+                  currencyConfig={config.currencyConfig}
+                  validate={priceValidators}
+                />*/
+              }
               {bookingInfo}
               <p className={css.smallPrint}>
                 <FormattedMessage
@@ -200,18 +244,16 @@ export class BookingDatesFormComponent extends Component {
   }
 }
 
-BookingDatesFormComponent.defaultProps = {
+BiddingFormComponent.defaultProps = {
   rootClassName: null,
   className: null,
   submitButtonWrapperClassName: null,
   price: null,
   isOwnListing: false,
-  startDatePlaceholder: null,
-  endDatePlaceholder: null,
-  timeSlots: null,
+
 };
 
-BookingDatesFormComponent.propTypes = {
+BiddingFormComponent.propTypes = {
   rootClassName: string,
   className: string,
   submitButtonWrapperClassName: string,
@@ -229,7 +271,7 @@ BookingDatesFormComponent.propTypes = {
   endDatePlaceholder: string,
 };
 
-const BiddingForm = compose(injectIntl)(BookingDatesFormComponent);
+const BiddingForm = compose(injectIntl)(BiddingFormComponent);
 BiddingForm.displayName = 'BiddingForm';
 
 export default BiddingForm;

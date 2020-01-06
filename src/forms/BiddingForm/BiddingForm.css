@@ -5,6 +5,10 @@
   flex-direction: column;
 }
 
+.priceInput{
+
+}
+
 .bookingDates {
   flex-shrink: 0;
   margin-bottom: 38px;
