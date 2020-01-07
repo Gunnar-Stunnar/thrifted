@@ -14,7 +14,7 @@ import includes from 'lodash/includes';
 import css from './PropertyGroup.css';
 
 const checkSelected = (options, selectedOptions) => {
-  console.log(selectedOptions);
+  //console.log(selectedOptions);
   let items = [];
   options.forEach(option => {
     if (includes(selectedOptions, option.key)) {
@@ -46,7 +46,7 @@ const PropertyGroup = props => {
   const listClasses = twoColumns ? classNames(classes, css.twoColumns) : classes;
 
   const checked = checkSelected(options, selectedOptions);
-  console.log(checked);
+  //console.log(checked);
   return (
     <ul className={listClasses}>
       {checked.map(option => (

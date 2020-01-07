@@ -82,7 +82,7 @@ const tabCompleted = (tab, listing) => {
     case FEATURES:
       return !!(publicData && publicData.condition);
     case TAGS:
-      return !!(publicData && publicData.tags);
+      return !!(publicData && publicData.size);
     case PRICING:
       return !!price;
     case PHOTOS:

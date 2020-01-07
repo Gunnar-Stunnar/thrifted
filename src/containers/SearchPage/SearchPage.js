@@ -56,7 +56,8 @@ export class SearchPageComponent extends Component {
       categories,
       //amenities,
       priceFilterConfig,
-      dateRangeFilterConfig,
+      sizeFilterConfig,
+      //dateRangeFilterConfig,
       keywordFilterConfig,
     } = this.props;
 
@@ -74,10 +75,14 @@ export class SearchPageComponent extends Component {
         paramName: 'price',
         config: priceFilterConfig,
       },
-      dateRangeFilter: {
+      sizeFilter: {
+        paramName: 'pub_size',
+        config: sizeFilterConfig,
+      },
+/*      dateRangeFilter: {
         paramName: 'dates',
         config: dateRangeFilterConfig,
-      },
+      },*/
       keywordFilter: {
         paramName: 'keywords',
         config: keywordFilterConfig,
@@ -223,7 +228,8 @@ export class SearchPageComponent extends Component {
               categoryFilter: filters.categoryFilter,
               //amenitiesFilter: filters.amenitiesFilter,
               priceFilter: filters.priceFilter,
-              dateRangeFilter: filters.dateRangeFilter,
+              //dateRangeFilter: filters.dateRangeFilter,
+              sizeFilter: filters.sizeFilter,
               keywordFilter: filters.keywordFilter,
             }}
           />
@@ -244,7 +250,7 @@ SearchPageComponent.defaultProps = {
   categories: config.custom.categories,
   //amenities: config.custom.amenities,
   priceFilterConfig: config.custom.priceFilterConfig,
-  dateRangeFilterConfig: config.custom.dateRangeFilterConfig,
+  //dateRangeFilterConfig: config.custom.dateRangeFilterConfig,
   keywordFilterConfig: config.custom.keywordFilterConfig,
   activeListingId: null,
 };

@@ -267,7 +267,17 @@ class SearchFiltersMobileComponent extends Component {
         initialValues={initialPriceRange}
       />
     ) : null;
-
+    const sizeFilterElement = priceFilter ? (
+      <PriceFilter
+        id="SearchFiltersMobile.priceFilter"
+        urlParam={priceFilter.paramName}
+        onSubmit={this.handlePrice}
+        liveEdit
+        {...priceFilter.config}
+        initialValues={initialPriceRange}
+      />
+    ) : null;
+/*
     const initialDateRange = this.initialDateRangeValue(dateRangeFilter.paramName);
 
     const dateRangeFilterElement =
@@ -281,7 +291,7 @@ class SearchFiltersMobileComponent extends Component {
           initialValues={initialDateRange}
         />
       ) : null;
-
+*/
     const initialKeyword = this.initialValue(keywordFilter.paramName);
     const keywordLabel = intl.formatMessage({
       id: 'SearchFiltersMobile.keywordLabel',
@@ -311,9 +321,6 @@ class SearchFiltersMobileComponent extends Component {
           <Button rootClassName={filtersButtonClasses} onClick={this.openFilters}>
             <FormattedMessage id="SearchFilters.filtersButtonLabel" className={css.mapIconText} />
           </Button>
-          <div className={css.mapIcon} onClick={onMapIconClick}>
-            <FormattedMessage id="SearchFilters.openMapView" className={css.mapIconText} />
-          </div>
         </div>
         <ModalInMobile
           id="SearchFiltersMobile.filters"
@@ -336,8 +343,10 @@ class SearchFiltersMobileComponent extends Component {
               {categoryFilterElement}
               {//amenitiesFilterElement
               }
+              {sizeFilterElement}
               {priceFilterElement}
-              {dateRangeFilterElement}
+              {//dateRangeFilterElement
+              }
             </div>
           ) : null}
 
@@ -362,7 +371,7 @@ SearchFiltersMobileComponent.defaultProps = {
   categoryFilter: null,
   amenitiesFilter: null,
   priceFilter: null,
-  dateRangeFilter: null,
+  sizeFilter: null,
 };
 
 SearchFiltersMobileComponent.propTypes = {
@@ -380,9 +389,8 @@ SearchFiltersMobileComponent.propTypes = {
   selectedFiltersCount: number,
   filterParamNames: array,
   categoriesFilter: propTypes.filterConfig,
-  amenitiesFilter: propTypes.filterConfig,
   priceFilter: propTypes.filterConfig,
-  dateRangeFilter: propTypes.filterConfig,
+  sizeFilter:propTypes.filterConfig,
 
   // from injectIntl
   intl: intlShape.isRequired,

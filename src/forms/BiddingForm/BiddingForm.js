@@ -40,9 +40,9 @@ export class BiddingFormComponent extends Component {
   // default handleSubmit function.
   handleFormSubmit(e) {
     //console.log(e);
-    if (!e.price) {
+    //if (!e.price) {
       this.props.onSubmit(e);
-    }
+    //}
   }
 
   render() {

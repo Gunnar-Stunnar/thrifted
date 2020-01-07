@@ -321,7 +321,7 @@ export class ListingPageComponent extends Component {
 
     const { formattedPrice, priceTitle } = priceData(price, intl);
 
-    console.log(currentListing);
+    //console.log(currentListing);
 
     const handleBookingSubmit = values => {
       const isCurrentlyClosed = currentListing.attributes.state === LISTING_STATE_CLOSED;
@@ -461,7 +461,6 @@ export class ListingPageComponent extends Component {
                   unitType={unitType}
                   onSubmit={handleBookingSubmit}
                   title={bookingTitle}
-                  subTitle={bookingSubTitle}
                   authorDisplayName={authorDisplayName}
                   onManageDisableScrolling={onManageDisableScrolling}
                   timeSlots={timeSlots}
