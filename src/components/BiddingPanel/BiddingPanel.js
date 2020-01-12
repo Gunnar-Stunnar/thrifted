@@ -47,7 +47,7 @@ const closeBookModal = (history, location) => {
   history.push(`${pathname}${searchString}`, state);
 };
 
-const BiddingPanel = props => {
+const BookingPanel = props => {
   const {
     rootClassName,
     className,
@@ -78,8 +78,8 @@ const BiddingPanel = props => {
   const subTitleText = !!subTitle
     ? subTitle
     : showClosedListingHelpText
-    ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
-    : null;
+      ? intl.formatMessage({ id: 'BookingPanel.subTitleClosedListing' })
+      : null;
 
   const isNightly = unitType === LINE_ITEM_NIGHT;
   const isDaily = unitType === LINE_ITEM_DAY;
@@ -87,8 +87,8 @@ const BiddingPanel = props => {
   const unitTranslationKey = isNightly
     ? 'BookingPanel.perNight'
     : isDaily
-    ? 'BookingPanel.perDay'
-    : 'BookingPanel.perUnit';
+      ? 'BookingPanel.perDay'
+      : 'BookingPanel.perUnit';
 
   const classes = classNames(rootClassName || css.root, className);
   const titleClasses = classNames(titleClassName || css.bookingTitle);
@@ -155,7 +155,7 @@ const BiddingPanel = props => {
   );
 };
 
-BiddingPanel.defaultProps = {
+BookingPanel.defaultProps = {
   rootClassName: null,
   className: null,
   titleClassName: null,
@@ -166,7 +166,7 @@ BiddingPanel.defaultProps = {
   fetchTimeSlotsError: null,
 };
 
-BiddingPanel.propTypes = {
+BookingPanel.propTypes = {
   rootClassName: string,
   className: string,
   titleClassName: string,
@@ -196,4 +196,4 @@ BiddingPanel.propTypes = {
 export default compose(
   withRouter,
   injectIntl
-)(BiddingPanel);
+)(BookingPanel);

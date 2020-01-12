@@ -142,12 +142,12 @@ export const denormalisedResponseEntities = sdkResponse => {
  *
  * @param {Object} transaction entity object, which is to be ensured against null values
  */
-export const ensureTransaction = (transaction, booking = null, listing = null, provider = null) => {
+export const ensureTransaction = (transaction, listing = null, provider = null) => {
   const empty = {
     id: null,
     type: 'transaction',
     attributes: {},
-    booking,
+    //booking,
     listing,
     provider,
   };

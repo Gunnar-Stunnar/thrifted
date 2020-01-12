@@ -23,6 +23,7 @@
 
   /* Layout for child components */
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 
@@ -40,10 +41,11 @@
 
 .home {
   display: flex;
-  padding: calc((var(--topbarHeight) - var(--CheckoutPage_logoHeight)) / 2) 24px;
+  flex-direction: row;
+  /*padding: calc((var(--topbarHeight) - var(--CheckoutPage_logoHeight)) / 2) 24px;*/
 
   @media (--viewportLarge) {
-    padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;
+    /*padding: calc((var(--topbarHeightDesktop) - var(--CheckoutPage_logoHeightDesktop)) / 2) 36px;*/
   }
 }
 
@@ -62,7 +64,7 @@
 .logoDesktop {
   display: none;
   width: auto;
-  height: 27px;
+  height: 72px;
 
   @media (--viewportLarge) {
     display: block;
@@ -344,4 +346,16 @@
   @media (--viewportLarge) {
     margin: 0 48px;
   }
+}
+
+.orange{
+  background-color: var(--marketplaceColorDark);
+  flex-grow:1;
+  height: inherit;
+}
+
+.red{
+  flex-grow:1;
+  height: inherit;
+  background-color: var(--marketplaceColorBackground);
 }

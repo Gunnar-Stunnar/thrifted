@@ -241,10 +241,6 @@ propTypes.booking = shape({
   id: propTypes.uuid.isRequired,
   type: propTypes.value('booking').isRequired,
   attributes: shape({
-    end: instanceOf(Date).isRequired,
-    start: instanceOf(Date).isRequired,
-    displayStart: instanceOf(Date),
-    displayEnd: instanceOf(Date),
     state: oneOf(BOOKING_STATES),
   }),
 });

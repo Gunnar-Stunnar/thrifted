@@ -101,11 +101,15 @@ export class ListingPageComponent extends Component {
     const listingId = new UUID(params.id);
     const listing = getListing(listingId);
 
-    const { price, ...priceData } = values;
-
+    const { bookingDates, ...bookingData } = values;
+    //console.log(listing);
     const initialValues = {
-      listing,
-      //bid:priceData,
+      listing:listing,
+      bookingData,
+      bookingDates: {
+        bookingStart: bookingDates.startDate,
+        bookingEnd: bookingDates.endDate,
+      },
       confirmPaymentError: null,
     };
 
@@ -328,6 +332,7 @@ export class ListingPageComponent extends Component {
       if (isOwnListing || isCurrentlyClosed) {
         window.scrollTo(0, 0);
       } else {
+        console.log(values);
         this.handleSubmit(values);
       }
     };
@@ -429,10 +434,10 @@ export class ListingPageComponent extends Component {
                      */
                   }
                     <SectionFeaturesMaybe
-                      options={conditionConfig} publicData={publicData} itemsFeatureName={publicData.condition} FeatureNameId={'ListingPage.featuresTitleCondition'}
+                      options={conditionConfig} publicData={publicData} itemsFeatureName={"condition"} FeatureNameId={'ListingPage.featuresTitleCondition'}
                     />
                     <SectionFeaturesMaybe
-                      options={sizeConfig} publicData={publicData} itemsFeatureName={publicData.size} FeatureNameId={'ListingPage.featuresTitleSize'}
+                      options={sizeConfig} publicData={publicData} itemsFeatureName={"size"} FeatureNameId={'ListingPage.featuresTitleSize'}
                     />
                 </div>
                   <SectionDescriptionMaybe description={description}/>
@@ -461,6 +466,7 @@ export class ListingPageComponent extends Component {
                   unitType={unitType}
                   onSubmit={handleBookingSubmit}
                   title={bookingTitle}
+                  subTitle={bookingSubTitle}
                   authorDisplayName={authorDisplayName}
                   onManageDisableScrolling={onManageDisableScrolling}
                   timeSlots={timeSlots}
@@ -497,9 +503,6 @@ ListingPageComponent.propTypes = {
   // from withRouter
   history: shape({
     push: func.isRequired,
-  }).isRequired,
-  location: shape({
-    search: string,
   }).isRequired,
 
   unitType: propTypes.bookingUnitType,

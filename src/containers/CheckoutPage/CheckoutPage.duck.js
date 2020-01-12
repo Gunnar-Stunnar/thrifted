@@ -163,15 +163,15 @@ export const initiateOrder = (orderParams, transactionId) => (dispatch, getState
   dispatch(initiateOrderRequest());
   const bodyParams = transactionId
     ? {
-        id: transactionId,
-        transition: TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY,
-        params: orderParams,
-      }
+      id: transactionId,
+      transition: TRANSITION_REQUEST_PAYMENT_AFTER_ENQUIRY,
+      params: orderParams,
+    }
     : {
-        processAlias: config.bookingProcessAlias,
-        transition: TRANSITION_REQUEST_PAYMENT,
-        params: orderParams,
-      };
+      processAlias: config.bookingProcessAlias,
+      transition: TRANSITION_REQUEST_PAYMENT,
+      params: orderParams,
+    };
   const queryParams = {
     include: ['booking', 'provider'],
     expand: true,
