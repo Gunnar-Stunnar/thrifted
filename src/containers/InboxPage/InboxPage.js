@@ -171,9 +171,8 @@ const BookingInfoMaybe = props => {
 
   // Remember to also add formatMoney function from 'util/currency.js' and add this after BookingTimeInfo:
   // <div className={css.itemPrice}>{price}</div>
-
-  return (
-    <div className={classNames(css.bookingInfoWrapper, bookingClassName)}>
+  /*
+      <div className={classNames(css.bookingInfoWrapper, bookingClassName)}>
       <BookingTimeInfo
         bookingClassName={bookingClassName}
         isOrder={isOrder}
@@ -183,6 +182,9 @@ const BookingInfoMaybe = props => {
         dateType={DATE_TYPE_DATE}
       />
     </div>
+  */
+  return (
+    null
   );
 };
 

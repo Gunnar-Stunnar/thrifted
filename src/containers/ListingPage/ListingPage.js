@@ -105,11 +105,11 @@ export class ListingPageComponent extends Component {
     //console.log(listing);
     const initialValues = {
       listing:listing,
-      bookingData,
+      /*bookingData,
       bookingDates: {
         bookingStart: bookingDates.startDate,
         bookingEnd: bookingDates.endDate,
-      },
+      },*/
       confirmPaymentError: null,
     };
 

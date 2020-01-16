@@ -35,6 +35,7 @@ export class BookingDatesFormComponent extends Component {
   // focus on that input, otherwise continue with the
   // default handleSubmit function.
   handleFormSubmit(e) {
+    /*
     const { startDate, endDate } = e.bookingDates || {};
     if (!startDate) {
       e.preventDefault();
@@ -42,9 +43,9 @@ export class BookingDatesFormComponent extends Component {
     } else if (!endDate) {
       e.preventDefault();
       this.setState({ focusedInput: END_DATE });
-    } else {
+    } else {*/
       this.props.onSubmit(e);
-    }
+    //}
   }
 
   render() {
@@ -154,9 +155,8 @@ export class BookingDatesFormComponent extends Component {
             submitButtonWrapperClassName || css.submitButtonWrapper
           );
 
-          return (
-            <Form onSubmit={handleSubmit} className={classes}>
-              {timeSlotsError}
+          /*
+                        {timeSlotsError}
               <FieldDateRangeInput
                 className={css.bookingDates}
                 name="bookingDates"
@@ -177,6 +177,10 @@ export class BookingDatesFormComponent extends Component {
                   bookingDatesRequired(startDateErrorMessage, endDateErrorMessage)
                 )}
               />
+          */
+          return (
+            <Form onSubmit={handleSubmit} className={classes}>
+
               {bookingInfo}
               <p className={css.smallPrint}>
                 <FormattedMessage

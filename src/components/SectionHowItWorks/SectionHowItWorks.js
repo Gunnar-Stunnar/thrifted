@@ -9,7 +9,7 @@ import css from './SectionHowItWorks.css';
 
 const SectionHowItWorks = props => {
   const { rootClassName, className } = props;
-
+  const openStore="/s";
   const classes = classNames(rootClassName || css.root, className);
   return (
     <div className={classes}>
@@ -53,7 +53,7 @@ const SectionHowItWorks = props => {
         </NamedLink>
       </div>
       <div className={css.createListingLink}>
-        <Button name="Store">
+        <Button name="Store" href={openStore}>
           <FormattedMessage id="SectionHowItWorks.goToStore" />
         </Button>
       </div>

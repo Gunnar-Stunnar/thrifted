@@ -12,6 +12,8 @@ import {
   txIsInFirstReviewBy,
   TRANSITION_ACCEPT,
   TRANSITION_DECLINE,
+  TRANSITION_RECEIVED,
+  TRANSITION_DECLINED2,
 } from '../../util/transaction';
 import * as log from '../../util/log';
 import {
@@ -21,6 +23,7 @@ import {
 } from '../../util/data';
 import { addMarketplaceEntities } from '../../ducks/marketplaceData.duck';
 import { fetchCurrentUserNotifications } from '../../ducks/user.duck';
+import {propTypes} from "../../util/types";
 
 const { UUID } = sdkTypes;
 
@@ -47,6 +50,14 @@ export const DECLINE_SALE_REQUEST = 'app/TransactionPage/DECLINE_SALE_REQUEST';
 export const DECLINE_SALE_SUCCESS = 'app/TransactionPage/DECLINE_SALE_SUCCESS';
 export const DECLINE_SALE_ERROR = 'app/TransactionPage/DECLINE_SALE_ERROR';
 
+export const RECEIVE_SALE_REQUEST = 'app/TransactionPage/RECEIVE_SALE_REQUEST';
+export const RECEIVE_SALE_SUCCESS = 'app/TransactionPage/RECEIVE_SALE_SUCCESS';
+export const RECEIVE_SALE_ERROR = 'app/TransactionPage/RECEIVE_SALE_ERROR';
+
+export const ISSUE_SALE_REQUEST = 'app/TransactionPage/ISSUE_SALE_REQUEST';
+export const ISSUE_SALE_SUCCESS = 'app/TransactionPage/ISSUE_SALE_SUCCESS';
+export const ISSUE_SALE_ERROR = 'app/TransactionPage/ISSUE_SALE_ERROR';
+
 export const FETCH_MESSAGES_REQUEST = 'app/TransactionPage/FETCH_MESSAGES_REQUEST';
 export const FETCH_MESSAGES_SUCCESS = 'app/TransactionPage/FETCH_MESSAGES_SUCCESS';
 export const FETCH_MESSAGES_ERROR = 'app/TransactionPage/FETCH_MESSAGES_ERROR';
@@ -72,6 +83,10 @@ const initialState = {
   acceptInProgress: false,
   acceptSaleError: null,
   declineInProgress: false,
+  receivedSaleError: null,
+  IssueSaleError: null,
+  IssueInProgress: false,
+  ReceivedInProgress: false,
   declineSaleError: null,
   fetchMessagesInProgress: false,
   fetchMessagesError: null,
@@ -138,6 +153,20 @@ export default function checkoutPageReducer(state = initialState, action = {}) {
       return { ...state, declineInProgress: false };
     case DECLINE_SALE_ERROR:
       return { ...state, declineInProgress: false, declineSaleError: payload };
+
+    case RECEIVE_SALE_REQUEST:
+      return { ...state, ReceivedInProgress: true, receivedSaleError: null, IssueSaleError: null };
+    case RECEIVE_SALE_SUCCESS:
+      return { ...state, ReceivedInProgress: false };
+    case RECEIVE_SALE_ERROR:
+      return { ...state, ReceivedInProgress: false, receivedSaleError: payload };
+
+    case ISSUE_SALE_REQUEST:
+      return { ...state, IssueInProgress: true, IssueSaleError: null, receivedSaleError: null };
+    case ISSUE_SALE_SUCCESS:
+      return { ...state, IssueInProgress: false };
+    case ISSUE_SALE_ERROR:
+      return { ...state, IssueInProgress: false, IssueSaleError: payload };
 
     case FETCH_MESSAGES_REQUEST:
       return { ...state, fetchMessagesInProgress: true, fetchMessagesError: null };
@@ -222,6 +251,14 @@ const acceptSaleError = e => ({ type: ACCEPT_SALE_ERROR, error: true, payload: e
 const declineSaleRequest = () => ({ type: DECLINE_SALE_REQUEST });
 const declineSaleSuccess = () => ({ type: DECLINE_SALE_SUCCESS });
 const declineSaleError = e => ({ type: DECLINE_SALE_ERROR, error: true, payload: e });
+
+const ReceiveSaleRequest = () => ({ type: RECEIVE_SALE_REQUEST });
+const ReceiveSaleSuccess = () => ({ type: RECEIVE_SALE_SUCCESS });
+const ReceiveSaleError = e => ({ type: RECEIVE_SALE_ERROR, error: true, payload: e });
+
+const IssueSaleRequest = () => ({ type: ISSUE_SALE_REQUEST });
+const IssueSaleSuccess = () => ({ type: ISSUE_SALE_SUCCESS });
+const IssueSaleError = e => ({ type: ISSUE_SALE_ERROR, error: true, payload: e });
 
 const fetchMessagesRequest = () => ({ type: FETCH_MESSAGES_REQUEST });
 const fetchMessagesSuccess = (messages, pagination) => ({
@@ -318,6 +355,48 @@ export const fetchTransaction = (id, txRole) => (dispatch, getState, sdk) => {
     })
     .catch(e => {
       dispatch(fetchTransactionError(storableError(e)));
+      throw e;
+    });
+};
+
+export const receivedSale = id => (dispatch, getState, sdk) => {
+  dispatch(ReceiveSaleRequest());
+
+  return sdk.transactions
+    .transition({ id, transition: TRANSITION_RECEIVED, params: {} }, { expand: true })
+    .then(response => {
+      dispatch(addMarketplaceEntities(response));
+      dispatch(ReceiveSaleSuccess());
+      dispatch(fetchCurrentUserNotifications());
+      return response;
+    })
+    .catch(e => {
+      dispatch(ReceiveSaleError(storableError(e)));
+      log.error(e, 'accept-sale-failed', {
+        txId: id,
+        transition: TRANSITION_RECEIVED,
+      });
+      throw e;
+    });
+};
+
+export const issueWithSale = id => (dispatch, getState, sdk) => {
+  dispatch(IssueSaleRequest());
+
+  return sdk.transactions
+    .transition({ id, transition: TRANSITION_DECLINED2, params: {} }, { expand: true })
+    .then(response => {
+      dispatch(addMarketplaceEntities(response));
+      dispatch(IssueSaleSuccess());
+      dispatch(fetchCurrentUserNotifications());
+      return response;
+    })
+    .catch(e => {
+      dispatch(IssueSaleError(storableError(e)));
+      log.error(e, 'reject-sale-failed', {
+        txId: id,
+        transition: TRANSITION_DECLINED2,
+      });
       throw e;
     });
 };

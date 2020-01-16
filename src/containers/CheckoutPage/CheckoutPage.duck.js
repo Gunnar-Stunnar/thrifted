@@ -34,8 +34,9 @@ export const STRIPE_CUSTOMER_ERROR = 'app/CheckoutPage/STRIPE_CUSTOMER_ERROR';
 
 const initialState = {
   listing: null,
+  /*
   bookingData: null,
-  bookingDates: null,
+  bookingDates: null,*/
   speculateTransactionInProgress: false,
   speculateTransactionError: null,
   speculatedTransaction: null,
@@ -173,7 +174,7 @@ export const initiateOrder = (orderParams, transactionId) => (dispatch, getState
       params: orderParams,
     };
   const queryParams = {
-    include: ['booking', 'provider'],
+    include: ['provider'],
     expand: true,
   };
 
@@ -193,8 +194,8 @@ export const initiateOrder = (orderParams, transactionId) => (dispatch, getState
       log.error(e, 'initiate-order-failed', {
         ...transactionIdMaybe,
         listingId: orderParams.listingId.uuid,
-        bookingStart: orderParams.bookingStart,
-        bookingEnd: orderParams.bookingEnd,
+        /*bookingStart: orderParams.bookingStart,
+        bookingEnd: orderParams.bookingEnd,*/
       });
       throw e;
     });
@@ -270,7 +271,7 @@ export const speculateTransaction = params => (dispatch, getState, sdk) => {
     },
   };
   const queryParams = {
-    include: ['booking', 'provider'],
+    include: ['provider'],
     expand: true,
   };
   return sdk.transactions
@@ -284,11 +285,11 @@ export const speculateTransaction = params => (dispatch, getState, sdk) => {
       dispatch(speculateTransactionSuccess(tx));
     })
     .catch(e => {
-      const { listingId, bookingStart, bookingEnd } = params;
+      const { listingId/*, bookingStart, bookingEnd*/ } = params;
       log.error(e, 'speculate-transaction-failed', {
         listingId: listingId.uuid,
-        bookingStart,
-        bookingEnd,
+        /*bookingStart,
+        bookingEnd,*/
       });
       return dispatch(speculateTransactionError(storableError(e)));
     });

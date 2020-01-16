@@ -39,6 +39,7 @@ import DetailCardHeadingsMaybe from './DetailCardHeadingsMaybe';
 import DetailCardImage from './DetailCardImage';
 import FeedSection from './FeedSection';
 import SaleActionButtonsMaybe from './SaleActionButtonsMaybe';
+import ReceiveActionButtonsMaybe from './ReceiveActionButtonsMaybe';
 import PanelHeading, {
   HEADING_ENQUIRED,
   HEADING_PAYMENT_PENDING,
@@ -183,10 +184,16 @@ export class TransactionPanelComponent extends Component {
       intl,
       onAcceptSale,
       onDeclineSale,
+      onReceivedSale,
+      onIssueWithSale,
       acceptInProgress,
+      IssueInProgress,
+      ReceivedInProgress,
       declineInProgress,
       acceptSaleError,
       declineSaleError,
+      receivedSaleError,
+      IssueSaleError,
       onSubmitBookingRequest,
       timeSlots,
       fetchTimeSlotsError,
@@ -241,8 +248,8 @@ export class TransactionPanelComponent extends Component {
       } else if (txIsAccepted(tx)) {
         return {
           headingState: HEADING_ACCEPTED,
-          showDetailCardHeadings: isCustomer,
-          showAddress: isCustomer,
+          showDetailCardHeadings: isProvider,
+          showReceiveButtons: isCustomer,
         };
       } else if (txIsDeclined(tx)) {
         return {
@@ -312,6 +319,18 @@ export class TransactionPanelComponent extends Component {
         onDeclineSale={() => onDeclineSale(currentTransaction.id)}
       />
     );
+    const receivedButtons = (
+      <ReceiveActionButtonsMaybe
+        showButtons={stateData.showReceiveButtons}
+        ReceivedInProgress={ReceivedInProgress}
+        IssueInProgress={IssueInProgress}
+        receivedSaleError={receivedSaleError}
+        issueSaleError={IssueSaleError}
+        onReceivedSale={() => onReceivedSale(currentTransaction.id)}
+        onIssueWithSale={() => onIssueWithSale(currentTransaction.id)}
+      />
+  );
+
 
     const showSendMessageForm =
       !isCustomerBanned && !isCustomerDeleted && !isProviderBanned && !isProviderDeleted;
@@ -408,8 +427,8 @@ export class TransactionPanelComponent extends Component {
               <div className={css.sendingMessageNotAllowed}>{sendingMessageNotAllowed}</div>
             )}
 
-            {stateData.showSaleButtons ? (
-              <div className={css.mobileActionButtons}>{saleButtons}</div>
+            {stateData.showSaleButtons || stateData.showReceiveButtons ? (
+              <div className={css.mobileActionButtons}>{stateData.showReceiveButtons ? receivedButtons : saleButtons}</div>
             ) : null}
           </div>
 
@@ -452,8 +471,8 @@ export class TransactionPanelComponent extends Component {
                 transactionRole={transactionRole}
               />
 
-              {stateData.showSaleButtons ? (
-                <div className={css.desktopActionButtons}>{saleButtons}</div>
+              {stateData.showSaleButtons || stateData.showReceiveButtons ? (
+                <div className={css.desktopActionButtons}>{stateData.showReceiveButtons ? receivedButtons : saleButtons}</div>
               ) : null}
             </div>
           </div>

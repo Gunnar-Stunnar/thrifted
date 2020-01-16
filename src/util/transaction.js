@@ -34,6 +34,12 @@ export const TRANSITION_EXPIRE_PAYMENT = 'transition/expire-payment';
 export const TRANSITION_ACCEPT = 'transition/accept';
 export const TRANSITION_DECLINE = 'transition/decline';
 
+//After provider has accepted to trade then the customer have to select if received
+// or Not received then customer support steps in.
+export const TRANSITION_RECEIVED = 'transition/receive';
+export const TRANSITION_DECLINED2 = 'transition/decline2';
+export const TRANSITION_EXPIRE2 = 'transition/expire2';
+
 // The backend automatically expire the transaction.
 export const TRANSITION_EXPIRE = 'transition/expire';
 
@@ -89,6 +95,7 @@ const STATE_PAYMENT_EXPIRED = 'payment-expired';
 const STATE_PREAUTHORIZED = 'preauthorized';
 const STATE_DECLINED = 'declined';
 const STATE_ACCEPTED = 'accepted';
+const STATE_SELLERISSUE = 'sellerIssue';
 const STATE_CANCELED = 'canceled';
 const STATE_DELIVERED = 'delivered';
 const STATE_REVIEWED = 'reviewed';
@@ -108,7 +115,7 @@ const stateDescription = {
   // id is defined only to support Xstate format.
   // However if you have multiple transaction processes defined,
   // it is best to keep them in sync with transaction process aliases.
-  id: 'preauth-with-nightly-booking/release-1',
+  id: 'buy-and-trade/release-1',
 
   // This 'initial' state is a starting point for new transaction
   initial: STATE_INITIAL,
@@ -147,10 +154,16 @@ const stateDescription = {
     [STATE_ACCEPTED]: {
       on: {
         [TRANSITION_CANCEL]: STATE_CANCELED,
-        [TRANSITION_COMPLETE]: STATE_DELIVERED,
+        [TRANSITION_DECLINED2]: STATE_SELLERISSUE,
+        [TRANSITION_EXPIRE2]:STATE_SELLERISSUE,
+        [TRANSITION_RECEIVED]: STATE_DELIVERED
       },
     },
+    [STATE_SELLERISSUE]:{
+      on:{
 
+      }
+    },
     [STATE_CANCELED]: {},
     [STATE_DELIVERED]: {
       on: {
@@ -245,6 +258,7 @@ export const txIsCanceled = tx =>
 
 export const txIsDelivered = tx =>
   getTransitionsToState(STATE_DELIVERED).includes(txLastTransition(tx));
+
 
 const firstReviewTransitions = [
   ...getTransitionsToState(STATE_REVIEWED_BY_CUSTOMER),

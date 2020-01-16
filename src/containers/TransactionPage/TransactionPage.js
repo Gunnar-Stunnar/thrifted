@@ -35,6 +35,8 @@ import {
   sendMessage,
   sendReview,
   fetchMoreMessages,
+  receivedSale,
+  issueWithSale
 } from './TransactionPage.duck';
 import css from './TransactionPage.css';
 
@@ -71,6 +73,12 @@ export const TransactionPageComponent = props => {
     acceptSaleError,
     declineInProgress,
     declineSaleError,
+    receivedSaleError,
+    IssueSaleError,
+    IssueInProgress,
+    ReceivedInProgress,
+    onReceivedSale,
+    onIssueWithSale,
     onAcceptSale,
     onDeclineSale,
     timeSlots,
@@ -243,6 +251,13 @@ export const TransactionPageComponent = props => {
       onSubmitBookingRequest={handleSubmitBookingRequest}
       timeSlots={timeSlots}
       fetchTimeSlotsError={fetchTimeSlotsError}
+
+      IssueInProgress={IssueInProgress}
+      ReceivedInProgress={ReceivedInProgress}
+      receivedSaleError={receivedSaleError}
+      IssueSaleError={IssueSaleError}
+      onReceivedSale={onReceivedSale}
+      onIssueWithSale={onIssueWithSale}
     />
   ) : (
     loadingOrFailedFetching
@@ -273,6 +288,8 @@ TransactionPageComponent.defaultProps = {
   fetchTransactionError: null,
   acceptSaleError: null,
   declineSaleError: null,
+  IssueSaleError:null,
+  receivedSaleError:null,
   transaction: null,
   fetchMessagesError: null,
   initialMessageFailedToTransaction: null,
@@ -295,6 +312,12 @@ TransactionPageComponent.propTypes = {
   declineInProgress: bool.isRequired,
   onAcceptSale: func.isRequired,
   onDeclineSale: func.isRequired,
+  receivedSaleError: propTypes.error,
+  IssueSaleError: propTypes.error,
+  IssueInProgress: bool.isRequired,
+  ReceivedInProgress: bool.isRequired,
+  onReceivedSale: func.isRequired,
+  onIssueWithSale: func.isRequired,
   scrollingDisabled: bool.isRequired,
   transaction: propTypes.transaction,
   fetchMessagesError: propTypes.error,
@@ -331,6 +354,10 @@ const mapStateToProps = state => {
     declineSaleError,
     acceptInProgress,
     declineInProgress,
+    receivedSaleError,
+    IssueSaleError,
+    IssueInProgress,
+    ReceivedInProgress,
     transactionRef,
     fetchMessagesInProgress,
     fetchMessagesError,
@@ -359,6 +386,10 @@ const mapStateToProps = state => {
     declineSaleError,
     acceptInProgress,
     declineInProgress,
+    receivedSaleError,
+    IssueSaleError,
+    IssueInProgress,
+    ReceivedInProgress,
     scrollingDisabled: isScrollingDisabled(state),
     transaction,
     fetchMessagesInProgress,
@@ -382,6 +413,8 @@ const mapDispatchToProps = dispatch => {
   return {
     onAcceptSale: transactionId => dispatch(acceptSale(transactionId)),
     onDeclineSale: transactionId => dispatch(declineSale(transactionId)),
+    onReceivedSale:transactionId => dispatch(receivedSale(transactionId)),
+    onIssueWithSale:transactionId => dispatch(issueWithSale(transactionId)),
     onShowMoreMessages: txId => dispatch(fetchMoreMessages(txId)),
     onSendMessage: (txId, message) => dispatch(sendMessage(txId, message)),
     onManageDisableScrolling: (componentId, disableScrolling) =>
