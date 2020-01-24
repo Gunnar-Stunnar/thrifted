@@ -22,9 +22,11 @@ import { TopbarContainer } from '../../containers';
 import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
 import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
 import css from './LandingPage.css';
+import {hasCurrentUserErrors} from "../../ducks/user.duck";
+import {authenticationInProgress} from "../../ducks/Auth.duck";
 
 export const LandingPageComponent = props => {
-  const { history, intl, location, scrollingDisabled } = props;
+  const { history, intl, location, scrollingDisabled, isAuthenticated } = props;
 
   // Schema for search engines (helps them to understand what this page is about)
   // http://schema.org
@@ -59,7 +61,7 @@ export const LandingPageComponent = props => {
         </LayoutWrapperTopbar>
         <LayoutWrapperMain>
           <div className={css.heroContainer}>
-            <SectionHero className={css.hero} history={history} location={location} />
+            <SectionHero className={css.hero} history={history} location={location} loggedIn={isAuthenticated}/>
           </div>
           <ul className={css.sections}>
             <li className={css.section}>
@@ -82,6 +84,7 @@ export const LandingPageComponent = props => {
   );
 };
 
+
 const { bool, object } = PropTypes;
 
 LandingPageComponent.propTypes = {
@@ -96,8 +99,10 @@ LandingPageComponent.propTypes = {
 };
 
 const mapStateToProps = state => {
+  console.log(state.Auth);
   return {
     scrollingDisabled: isScrollingDisabled(state),
+    isAuthenticated: state.Auth.isAuthenticated
   };
 };
 

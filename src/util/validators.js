@@ -105,10 +105,12 @@ export const bookingDatesRequired = (inValidStartDateMessage, inValidEndDateMess
 // Source: http://www.regular-expressions.info/email.html
 // See the link above for an explanation of the tradeoffs.
 const EMAIL_RE = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+const UNIV_RE = /^[A-Z0-9._%+-]+@colorado.edu$/i;
 
-export const emailFormatValid = message => value => {
-  return value && EMAIL_RE.test(value) ? VALID : message;
+export const emailFormatValid = (message,msg2) => value => {
+  return value && EMAIL_RE.test(value) ? VALID : msg2;
 };
+
 
 export const moneySubUnitAmountAtLeast = (message, minValue) => value => {
   return value instanceof Money && value.amount >= minValue ? VALID : message;

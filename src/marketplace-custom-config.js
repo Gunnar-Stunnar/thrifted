@@ -107,16 +107,49 @@ export const categories = [
   { key: 'Women', label: 'Women\'s Clothing' },
   { key: 'Gear', label: 'Gear (Outdoor/Sporting)' },
   { key: 'party', label: 'Costumes + Party' },
+  { key: 'Shoes', label: 'SHOES!'}
 ];
 
+export const subCategory = {
+  Men:[
+    { key: 'shirt_men', label: 'Shirts' },
+    { key: 'pants', label: 'Pants' },
+    { key: 'jackets_men', label: 'Jackets' },
+    { key: 'Overalls', label: 'Overalls' },
+    { key: 'Hats', label: 'Hats' }
+  ],
+  Women:[
+    { key: 'shirt_women', label: 'Shirts' },
+    { key: 'bottoms', label: 'Pants' },
+    { key: 'Denim', label: 'Denim' },
+    { key: 'jackets_women', label: 'Jacket' },
+    { key: 'overalls', label: 'Overalls' },
+    { key: 'dresses', label: 'Dresses' },
+    { key: 'swim_an_accessories', label: 'Swim & Accessories' }
+  ],
+  Gear:[
+    { key: 'rockClimb', label: 'Rock Climbing' },
+    { key: 'Snow', label: 'Ski and Snow' },
+    { key: 'wheels', label: 'Wheels' },
+    { key: 'Sports', label: 'Nets, Balls, And Bats' }
+  ]
+  ,
+  party:[
+    { key: 'spirit', label: 'School Spirit Wear' },
+    { key: 'Retro', label: 'Retro Ski Gear' },
+    { key: '70_party', label: '70\'s Disco' },
+    { key: '90_party', label: '90\'s Grunge' },
+    { key: 'Funk', label: 'Funky Printed Shirts' }
+  ]
+};
 
 
 // Price filter configuration
 // Note: unlike most prices this is not handled in subunits
 export const priceFilterConfig = {
   min: 0,
-  max: 1000,
-  step: 5,
+  max: 60,
+  step: 1,
 };
 
 // Activate booking dates filter on search page

@@ -195,6 +195,7 @@ class SearchFiltersMobileComponent extends Component {
       categoryFilter,
       //amenitiesFilter,
       priceFilter,
+      sizeFilter,
       dateRangeFilter,
       keywordFilter,
       intl,
@@ -215,13 +216,24 @@ class SearchFiltersMobileComponent extends Component {
       { count: resultsCount }
     );
 
+    const sizeLabel = intl.formatMessage({
+      id: 'SearchFilters.sizeLabel',
+    });
+
     const filtersButtonClasses =
       selectedFiltersCount > 0 ? css.filtersButtonSelected : css.filtersButton;
+
+
 
     const categoryLabel = intl.formatMessage({
       id: 'SearchFiltersMobile.categoryLabel',
     });
     const initialCategory = categoryFilter ? this.initialValue(categoryFilter.paramName) : null;
+
+    const initialSize = sizeFilter
+      ? this.initialValue(sizeFilter.paramName)
+      : null;
+
 
     const categoryFilterElement = categoryFilter ? (
       <SelectSingleFilter
@@ -267,16 +279,18 @@ class SearchFiltersMobileComponent extends Component {
         initialValues={initialPriceRange}
       />
     ) : null;
-    const sizeFilterElement = priceFilter ? (
-      <PriceFilter
-        id="SearchFiltersMobile.priceFilter"
-        urlParam={priceFilter.paramName}
-        onSubmit={this.handlePrice}
+
+    const SizeFilterElement = sizeFilter ? (
+      <SelectSingleFilter
+        urlParam={sizeFilter.paramName}
+        label={sizeLabel}
+        onSelect={this.handleSelectSingle}
         liveEdit
-        {...priceFilter.config}
-        initialValues={initialPriceRange}
+        options={sizeFilter.options}
+        initialValue={initialSize}
+        intl={intl}
       />
-    ) : null;
+    ): null;
 /*
     const initialDateRange = this.initialDateRangeValue(dateRangeFilter.paramName);
 
@@ -343,7 +357,7 @@ class SearchFiltersMobileComponent extends Component {
               {categoryFilterElement}
               {//amenitiesFilterElement
               }
-              {sizeFilterElement}
+              {SizeFilterElement}
               {priceFilterElement}
               {//dateRangeFilterElement
               }

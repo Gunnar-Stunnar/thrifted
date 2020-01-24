@@ -40,7 +40,11 @@ const SignupFormComponent = props => (
       const emailInvalidMessage = intl.formatMessage({
         id: 'SignupForm.emailInvalid',
       });
-      const emailValid = validators.emailFormatValid(emailInvalidMessage);
+      const emailUnivInvalidMessage = intl.formatMessage({
+        id: 'SignupForm.emailUnivInvalid',
+      });
+
+      const emailValid = validators.emailFormatValid(emailUnivInvalidMessage);
 
       // password
       const passwordLabel = intl.formatMessage({

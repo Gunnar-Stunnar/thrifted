@@ -150,16 +150,17 @@ export const searchListings = searchParams => (dispatch, getState, sdk) => {
       : {};
   };
 
-  const { perPage, price, dates, ...rest } = searchParams;
+  const { perPage, price, size, ...rest } = searchParams;
   const priceMaybe = priceSearchParams(price);
-  const datesMaybe = datesSearchParams(dates);
+  //const sizeMaybe = sizeSearchParam(size);
 
   const params = {
     ...rest,
     ...priceMaybe,
-    ...datesMaybe,
     per_page: perPage,
   };
+
+  console.log(params);
 
   return sdk.listings
     .query(params)

@@ -77,7 +77,7 @@ export class SearchPageComponent extends Component {
       },
       sizeFilter: {
         paramName: 'pub_size',
-        config: sizeFilterConfig,
+        options: sizeFilterConfig,
       },
 /*      dateRangeFilter: {
         paramName: 'dates',
@@ -252,6 +252,7 @@ SearchPageComponent.defaultProps = {
   priceFilterConfig: config.custom.priceFilterConfig,
   //dateRangeFilterConfig: config.custom.dateRangeFilterConfig,
   keywordFilterConfig: config.custom.keywordFilterConfig,
+  sizeFilterConfig:config.custom.size,
   activeListingId: null,
 };
 

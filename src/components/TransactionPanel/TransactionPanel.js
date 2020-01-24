@@ -267,6 +267,7 @@ export class TransactionPanelComponent extends Component {
           showDetailCardHeadings: isCustomer,
           showAddress: isCustomer,
         };
+
       } else {
         return { headingState: 'unknown' };
       }

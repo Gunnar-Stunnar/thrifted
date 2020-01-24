@@ -7,11 +7,9 @@ import { withRouter } from 'react-router-dom';
 import omit from 'lodash/omit';
 
 import {
-  BookingDateRangeFilter,
   SelectSingleFilter,
   SelectMultipleFilter,
   PriceFilter,
-  KeywordFilter,
 } from '../../components';
 import routeConfiguration from '../../routeConfiguration';
 import { parseDateFromISO8601, stringifyDateToISO8601 } from '../../util/dates';
@@ -45,19 +43,6 @@ const initialPriceRangeValue = (queryParams, paramName) => {
     : null;
 };
 
-const initialDateRangeValue = (queryParams, paramName) => {
-  const dates = queryParams[paramName];
-  const rawValuesFromParams = !!dates ? dates.split(',') : [];
-  const valuesFromParams = rawValuesFromParams.map(v => parseDateFromISO8601(v));
-  const initialValues =
-    !!dates && valuesFromParams.length === 2
-      ? {
-          dates: { startDate: valuesFromParams[0], endDate: valuesFromParams[1] },
-        }
-      : { dates: null };
-
-  return initialValues;
-};
 
 const SearchFiltersComponent = props => {
   const {
@@ -68,10 +53,8 @@ const SearchFiltersComponent = props => {
     resultsCount,
     searchInProgress,
     categoryFilter,
-    amenitiesFilter,
+    sizeFilter,
     priceFilter,
-    dateRangeFilter,
-    keywordFilter,
     isSearchFiltersPanelOpen,
     toggleSearchFiltersPanel,
     searchFiltersPanelSelectedCount,
@@ -86,17 +69,11 @@ const SearchFiltersComponent = props => {
     id: 'SearchFilters.categoryLabel',
   });
 
-  const amenitiesLabel = intl.formatMessage({
-    id: 'SearchFilters.amenitiesLabel',
+
+  const sizeLabel = intl.formatMessage({
+    id: 'SearchFilters.sizeLabel',
   });
 
-  const keywordLabel = intl.formatMessage({
-    id: 'SearchFilters.keywordLabel',
-  });
-
-  const initialAmenities = amenitiesFilter
-    ? initialValues(urlQueryParams, amenitiesFilter.paramName)
-    : null;
 
   const initialCategory = categoryFilter
     ? initialValue(urlQueryParams, categoryFilter.paramName)
@@ -106,13 +83,11 @@ const SearchFiltersComponent = props => {
     ? initialPriceRangeValue(urlQueryParams, priceFilter.paramName)
     : null;
 
-  const initialDateRange = dateRangeFilter
-    ? initialDateRangeValue(urlQueryParams, dateRangeFilter.paramName)
+  const initialSize = sizeFilter
+    ? initialValue(urlQueryParams, sizeFilter.paramName)
     : null;
 
-  const initialKeyword = keywordFilter
-    ? initialValue(urlQueryParams, keywordFilter.paramName)
-    : null;
+
 
   const handleSelectOptions = (urlParam, options) => {
     const queryParams =
@@ -143,19 +118,6 @@ const SearchFiltersComponent = props => {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
 
-  const handleDateRange = (urlParam, dateRange) => {
-    const hasDates = dateRange && dateRange.dates;
-    const { startDate, endDate } = hasDates ? dateRange.dates : {};
-
-    const start = startDate ? stringifyDateToISO8601(startDate) : null;
-    const end = endDate ? stringifyDateToISO8601(endDate) : null;
-
-    const queryParams =
-      start != null && end != null
-        ? { ...urlQueryParams, [urlParam]: `${start},${end}` }
-        : omit(urlQueryParams, urlParam);
-    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
-  };
 
   const handleKeyword = (urlParam, values) => {
     const queryParams = values
@@ -177,19 +139,6 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const amenitiesFilterElement = amenitiesFilter ? (
-    <SelectMultipleFilter
-      id={'SearchFilters.amenitiesFilter'}
-      name="amenities"
-      urlParam={amenitiesFilter.paramName}
-      label={amenitiesLabel}
-      onSubmit={handleSelectOptions}
-      showAsPopup
-      options={amenitiesFilter.options}
-      initialValues={initialAmenities}
-      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-    />
-  ) : null;
 
   const priceFilterElement = priceFilter ? (
     <PriceFilter
@@ -203,31 +152,17 @@ const SearchFiltersComponent = props => {
     />
   ) : null;
 
-  const dateRangeFilterElement =
-    dateRangeFilter && dateRangeFilter.config.active ? (
-      <BookingDateRangeFilter
-        id="SearchFilters.dateRangeFilter"
-        urlParam={dateRangeFilter.paramName}
-        onSubmit={handleDateRange}
-        showAsPopup
-        contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-        initialValues={initialDateRange}
-      />
-    ) : null;
-
-  const keywordFilterElement =
-    keywordFilter && keywordFilter.config.active ? (
-      <KeywordFilter
-        id={'SearchFilters.keywordFilter'}
-        name="keyword"
-        urlParam={keywordFilter.paramName}
-        label={keywordLabel}
-        onSubmit={handleKeyword}
-        showAsPopup
-        initialValues={initialKeyword}
-        contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
-      />
-    ) : null;
+  const SizeFilterElement = sizeFilter ? (
+    <SelectSingleFilter
+      urlParam={sizeFilter.paramName}
+      label={sizeLabel}
+      onSelect={handleSelectOption}
+      showAsPopup
+      options={sizeFilter.options}
+      initialValue={initialSize}
+      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+    />
+  ): null;
 
   const toggleSearchFiltersPanelButtonClasses =
     isSearchFiltersPanelOpen || searchFiltersPanelSelectedCount > 0
@@ -250,10 +185,8 @@ const SearchFiltersComponent = props => {
     <div className={classes}>
       <div className={css.filters}>
         {categoryFilterElement}
-        {amenitiesFilterElement}
         {priceFilterElement}
-        {dateRangeFilterElement}
-        {keywordFilterElement}
+        {SizeFilterElement}
         {toggleSearchFiltersPanelButton}
       </div>
 
@@ -286,7 +219,7 @@ SearchFiltersComponent.defaultProps = {
   resultsCount: null,
   searchingInProgress: false,
   categoryFilter: null,
-  amenitiesFilter: null,
+  sizeFilter: null,
   priceFilter: null,
   dateRangeFilter: null,
   isSearchFiltersPanelOpen: false,
@@ -303,7 +236,7 @@ SearchFiltersComponent.propTypes = {
   searchingInProgress: bool,
   onManageDisableScrolling: func.isRequired,
   categoriesFilter: propTypes.filterConfig,
-  amenitiesFilter: propTypes.filterConfig,
+  sizeFilter: propTypes.filterConfig,
   priceFilter: propTypes.filterConfig,
   dateRangeFilter: propTypes.filterConfig,
   isSearchFiltersPanelOpen: bool,

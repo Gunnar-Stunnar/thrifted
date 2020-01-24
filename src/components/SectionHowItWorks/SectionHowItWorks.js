@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { FormattedMessage } from '../../util/reactIntl';
 import classNames from 'classnames';
 
+import { Link } from 'react-router-dom';
+
 import { NamedLink, Button } from '../../components';
 
 import css from './SectionHowItWorks.css';
@@ -53,9 +55,11 @@ const SectionHowItWorks = props => {
         </NamedLink>
       </div>
       <div className={css.createListingLink}>
-        <Button name="Store" href={openStore}>
-          <FormattedMessage id="SectionHowItWorks.goToStore" />
-        </Button>
+        <Link to={"/s"}>
+          <Button name="Store">
+            <FormattedMessage id="SectionHowItWorks.goToStore" />
+          </Button>
+        </Link>
       </div>
     </div>
   );

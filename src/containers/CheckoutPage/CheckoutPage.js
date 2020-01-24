@@ -183,6 +183,7 @@ export class CheckoutPageComponent extends Component {
     if (shouldFetchSpeculatedTransaction) {
       const listingId = pageData.listing.id;
       const quantity = 1;
+      const protectedData =  {ItemId:pageData.listing.id.uuid};
       /*const { bookingStart, bookingEnd } = pageData.bookingDates;*/
 
       // Convert picked date to date that will be converted on the API as
@@ -193,8 +194,10 @@ export class CheckoutPageComponent extends Component {
       // Fetch speculated transaction for showing price in booking breakdown
       // NOTE: if unit type is line-item/units, quantity needs to be added.
       // The way to pass it to checkout page is through pageData.bookingData
+
       fetchSpeculatedTransaction({
         listingId,
+        protectedData:protectedData,
         quantity
         /*
         bookingStart: bookingStartForAPI,
@@ -246,7 +249,7 @@ export class CheckoutPageComponent extends Component {
 
     // Step 1: initiate order by requesting payment from Marketplace API
     const fnRequestPayment = fnParams => {
-      // fnParams should be { listingId, bookingStart, bookingEnd }
+      // fnParams should be { listingId, protectedData }
       const hasPaymentIntents =
         storedTx.attributes.protectedData && storedTx.attributes.protectedData.stripePaymentIntents;
 
@@ -375,8 +378,10 @@ export class CheckoutPageComponent extends Component {
         : {};
 
     const quantity = 1;
+    const protectedData =  {ItemId:pageData.listing.id.uuid};
     const orderParams = {
       listingId: pageData.listing.id,
+      protectedData:protectedData,
       quantity,
       /*
       bookingStart: tx.booking.attributes.start,

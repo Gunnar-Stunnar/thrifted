@@ -262,19 +262,26 @@ export const ManageListingCardComponent = props => {
               { listingTitle: title }
             )}
           >
-            <button
-              className={css.openListingButton}
-              disabled={!!actionsInProgressListingId}
-              onClick={event => {
-                event.preventDefault();
-                event.stopPropagation();
-                if (!actionsInProgressListingId) {
-                  onOpenListing(currentListing.id);
-                }
-              }}
-            >
-              <FormattedMessage id="ManageListingCard.openListing" />
-            </button>
+            {
+              currentListing.attributes.publicData.sold ? (
+                <FormattedMessage id="ManageListingCard.ListingSold"/>
+              ):(
+              <button
+                className={css.openListingButton}
+                disabled={!!actionsInProgressListingId}
+                onClick={event => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  if (!actionsInProgressListingId) {
+                    onOpenListing(currentListing.id);
+                  }
+                }}
+              >
+
+                <FormattedMessage id="ManageListingCard.openListing"/>
+              </button>
+              )
+            }
           </Overlay>
         ) : null}
         {isPendingApproval ? (

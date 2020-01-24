@@ -17,7 +17,7 @@
   --TopbarDesktop_label: {
     display: inline-block;
     /*margin: 24px 0;*/
-    width: 50%;
+    width: 100%;
     text-decoration: inherit;
 
     @media (--viewportMedium) {

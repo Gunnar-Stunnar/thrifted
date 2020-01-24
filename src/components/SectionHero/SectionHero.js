@@ -7,7 +7,7 @@ import { NamedLink } from '../../components';
 import css from './SectionHero.css';
 
 const SectionHero = props => {
-  const { rootClassName, className } = props;
+  const { rootClassName, className, loggedIn } = props;
 
   const classes = classNames(rootClassName || css.root, className);
 
@@ -20,16 +20,15 @@ const SectionHero = props => {
         <h2 className={css.heroSubTitle}>
           <FormattedMessage id="SectionHero.subTitle" />
         </h2>
-        <NamedLink
-          name="SearchPage"
-          to={{
-            search:
-              'address=Finland&bounds=70.0922932%2C31.5870999%2C59.693623%2C20.456500199999937',
-          }}
-          className={css.heroButton}
-        >
-          <FormattedMessage id="SectionHero.browseButton" />
-        </NamedLink>
+
+          <NamedLink
+            name={loggedIn ? "SearchListingsPage":"SignupPage"}
+            className={css.heroButton}
+          >
+
+            <FormattedMessage id= {loggedIn ? "SectionHero.browseButton":"SectionHero.SignUpButton"}/>
+          </NamedLink>
+
       </div>
     </div>
   );
