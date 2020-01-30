@@ -94,7 +94,16 @@
 @media (--viewportMedium) {
   /*max-width: var(--SectionHero_desktopTitleMaxWidth);*/
 }
+
 }
+
+/*
+.heroMainTitle::first-letter{
+  color: #D4AF37;
+}
+.heroMainTitle:nth-of-letter(1){
+  color: #000;
+}*/
 
 .heroSubTitle {
   @apply --marketplaceBodyFontStyles;

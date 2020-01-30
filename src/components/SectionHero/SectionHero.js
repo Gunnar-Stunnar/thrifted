@@ -7,6 +7,7 @@ import { NamedLink } from '../../components';
 import css from './SectionHero.css';
 
 import video_thrif from './video/video.mp4';
+import background_lazyload from '../../assets/background-1440.jpg';
 
 const SectionHero = props => {
   const { rootClassName, className, loggedIn } = props;
@@ -21,8 +22,9 @@ const SectionHero = props => {
           <FormattedMessage id="SectionHero.title" />
         </h1>
 
-        <video className={css.VideoPlayer} autoplay="autoplay" loop="loop">
+        <video className={css.VideoPlayer} autoplay="autoplay" loop="loop" poster={background_lazyload} muted>
           <source src={video_thrif} type="video/mp4"></source>
+          Video could not load
         </video>
 
         <NamedLink

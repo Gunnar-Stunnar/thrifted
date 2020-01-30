@@ -8,8 +8,11 @@ import { NamedLink } from '../../components';
 
 import css from './SectionLocations.css';
 
-import formal_attire from './images/formal_attire.JPG';
-import snow from './images/snow_image.JPG';
+import buffStuffImage from './images/BuffStuff.jpg';
+import fancyShitImage from './images/fancyshit.jpg';
+import funkyPrintsImage from './images/funkyPrints.jpg';
+import handmadeImage from './images/handmade.jpg';
+import retroSkiImage from './images/RetroSki.jpg';
 
 //https://picsum.photos/200
 class LocationImage extends Component {
@@ -89,28 +92,28 @@ const SectionLocations = props => {
       <div className={css.locations}>
         {catagoryObjects([
           {
-            name:"Formal Attire",
-            img:formal_attire,
+            name:"Buff Stuff",
+            img:buffStuffImage,
             searchQuery:"/"
           },          
           {
-            name:"Game Day Gear",
-            img:"https://picsum.photos/200",
+            name:"Fancy Sh*t",
+            img:fancyShitImage,
             searchQuery:"/"
           },
           {
-            name:"Wheels",
-            img:"https://picsum.photos/200",
+            name:"Funky Print",
+            img:funkyPrintsImage,
             searchQuery:"/"
           },
           {
-            name:"Climb",
-            img:"https://picsum.photos/200",
+            name:"handmade",
+            img:handmadeImage,
             searchQuery:"/"
           },
           {
-            name:"Snow",
-            img:snow,
+            name:"Retro Ski Gear",
+            img:retroSkiImage,
             searchQuery:"/"
           }
         ])}

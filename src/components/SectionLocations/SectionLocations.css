@@ -32,6 +32,7 @@
   /*width: 100%;*/
   margin-top: 25px;
   /*max-width: 200px;*/
+
   flex-grow: 1;
   margin-right: 15px;
   width:150px;
@@ -45,12 +46,13 @@
   @media (--viewportMedium) {
     margin-right: 15px;
     margin-bottom: 0;
-    width:25%;
+    width:10%;
+
   }
   @media (max-width: 414px) {
     margin-right: 15px;
     margin-bottom: 0;
-    width:100%;
+    width:40%;
   }
 }
 
@@ -74,10 +76,13 @@
 
 /* An image wrapper that defines the images aspect ratio */
 .aspectWrapper {
-  padding-bottom: calc(6 / 13 * 100%); /* 13:6 Aspect Ratio */
+  padding-bottom: calc(13 / 6 * 100%); /* 13:6 Aspect Ratio */
 
   @media (--viewportMedium) {
-    padding-bottom: calc(2 / 3 * 100%); /* 3:2 Aspect Ratio */
+    padding-bottom: calc(3 / 2 * 100%); /* 3:2 Aspect Ratio */
+  }
+  @media (max-width: 414px) {
+    padding-bottom: calc(3 / 2 * 100%); /* 3:2 Aspect Ratio */
   }
 }
 
@@ -92,6 +97,7 @@
   height: 100%;
   border-radius: 4px;
   object-fit: cover;
+  object-position: top;
 }
 
 .linkText {
