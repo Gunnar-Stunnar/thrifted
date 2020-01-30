@@ -38,7 +38,7 @@ const fs = require('fs');
 const log = require('./log');
 const { sitemapStructure } = require('./sitemap');
 const csp = require('./csp');
-//const APIRoutes = require("./routes/router");
+const APIRoutes = require("./routes/router");
 
 const buildPath = path.resolve(__dirname, '..', 'build');
 const env = process.env.REACT_APP_ENV;
@@ -144,7 +144,9 @@ const noCacheHeaders = {
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
 
-//app.use('/api',APIRoutes);
+
+app.use(express.json());
+app.use('/api',APIRoutes);
 
 app.get('*', (req, res) => {
   if (req.url.startsWith('/static/')) {

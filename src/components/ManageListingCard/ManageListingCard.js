@@ -263,7 +263,7 @@ export const ManageListingCardComponent = props => {
             )}
           >
             {
-              currentListing.attributes.publicData.sold ? (
+              currentListing.attributes.metadata.sold ? (
                 <FormattedMessage id="ManageListingCard.ListingSold"/>
               ):(
               <button

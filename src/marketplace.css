@@ -163,7 +163,6 @@
   }
 
   /* ================ Buttons ================ */
-
   --marketplaceButtonFontStyles: {
     font-family: 'sofiapro', Helvetica, Arial, sans-serif;
     font-weight: var(--fontWeightSemiBold);

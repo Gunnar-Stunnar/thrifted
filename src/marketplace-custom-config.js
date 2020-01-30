@@ -96,50 +96,46 @@ export const condition = [
   },
 ];
 
-export const shoe_size = {
-  Min:0,
-  Max:20,
-  step:0.5
-}
 
 export const categories = [
   { key: 'Men', label: 'Men\'s Clothing' },
   { key: 'Women', label: 'Women\'s Clothing' },
   { key: 'Gear', label: 'Gear (Outdoor/Sporting)' },
   { key: 'party', label: 'Costumes + Party' },
-  { key: 'Shoes', label: 'SHOES!'}
+  { key: 'Shoes', label: 'Shoes'}
 ];
 
 export const subCategory = {
   Men:[
-    { key: 'shirt_men', label: 'Shirts' },
+    { key: 'shirt', label: 'Shirts' },
     { key: 'pants', label: 'Pants' },
-    { key: 'jackets_men', label: 'Jackets' },
+    { key: 'jackets', label: 'Jackets' },
     { key: 'Overalls', label: 'Overalls' },
     { key: 'Hats', label: 'Hats' }
   ],
   Women:[
-    { key: 'shirt_women', label: 'Shirts' },
+    { key: 'shirt1', label: 'Shirts' },
     { key: 'bottoms', label: 'Pants' },
     { key: 'Denim', label: 'Denim' },
-    { key: 'jackets_women', label: 'Jacket' },
-    { key: 'overalls', label: 'Overalls' },
+    { key: 'jackets1', label: 'Jacket' },
+    { key: 'overalls1', label: 'Overalls' },
     { key: 'dresses', label: 'Dresses' },
-    { key: 'swim_an_accessories', label: 'Swim & Accessories' }
+    { key: 'swim-and-accessories', label: 'Swim & Accessories' }
   ],
   Gear:[
-    { key: 'rockClimb', label: 'Rock Climbing' },
-    { key: 'Snow', label: 'Ski and Snow' },
+    { key: 'rock-climbing', label: 'Rock Climbing' },
+    { key: 'ski-and-snow', label: 'Ski and Snow' },
+    { key: 'camping-and-hiking', label:'Camping and Hiking'},
     { key: 'wheels', label: 'Wheels' },
-    { key: 'Sports', label: 'Nets, Balls, And Bats' }
+    { key: 'nets-balls-and-bats', label: 'Nets, Balls, And Bats' }
   ]
   ,
   party:[
-    { key: 'spirit', label: 'School Spirit Wear' },
-    { key: 'Retro', label: 'Retro Ski Gear' },
-    { key: '70_party', label: '70\'s Disco' },
-    { key: '90_party', label: '90\'s Grunge' },
-    { key: 'Funk', label: 'Funky Printed Shirts' }
+    { key: 'school-spirit-wear', label: 'School Spirit Wear' },
+    { key: 'retro-ski-gear', label: 'Retro Ski Gear' },
+    { key: '70-s-disco', label: '70\'s Disco' },
+    { key: '90-s-grunge', label: '90\'s Grunge' },
+    { key: 'funky-printed-shirts', label: 'Funky Printed Shirts' }
   ]
 };
 
@@ -151,11 +147,19 @@ export const priceFilterConfig = {
   max: 60,
   step: 1,
 };
+// Shoe size filter config
+export const shoe_size = {
+  Min:0,
+  Max:20,
+  step:0.5
+};
 
 // Activate booking dates filter on search page
+/*
 export const dateRangeFilterConfig = {
   active: true,
 };
+*/
 
 // Activate keyword filter on search page
 

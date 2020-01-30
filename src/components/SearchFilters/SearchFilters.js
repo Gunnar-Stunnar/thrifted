@@ -53,6 +53,7 @@ const SearchFiltersComponent = props => {
     resultsCount,
     searchInProgress,
     categoryFilter,
+    subCategoryFilter,
     sizeFilter,
     priceFilter,
     isSearchFiltersPanelOpen,
@@ -68,16 +69,22 @@ const SearchFiltersComponent = props => {
   const categoryLabel = intl.formatMessage({
     id: 'SearchFilters.categoryLabel',
   });
-
+  const subCategoryLabel = intl.formatMessage({
+    id: 'SearchFilters.subCategoryLabel',
+  });
 
   const sizeLabel = intl.formatMessage({
     id: 'SearchFilters.sizeLabel',
   });
 
-
   const initialCategory = categoryFilter
     ? initialValue(urlQueryParams, categoryFilter.paramName)
     : null;
+
+  const initialSubCategory = categoryFilter
+    ? initialValue(urlQueryParams, categoryFilter.paramName)
+    : null;
+
 
   const initialPriceRange = priceFilter
     ? initialPriceRangeValue(urlQueryParams, priceFilter.paramName)
@@ -138,6 +145,17 @@ const SearchFiltersComponent = props => {
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;
+  const subCategoryFilterElement = subCategoryFilter && initialCategory  ? (
+    <SelectMultipleFilter
+      urlParam={subCategoryFilter.paramName}
+      label={subCategoryLabel}
+      onSelect={handleSelectOptions}
+      showAsPopup
+      options={subCategoryFilter.options[initialCategory]}
+      initialValue={initialSubCategory}
+      contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
+    />
+) : null;
 
 
   const priceFilterElement = priceFilter ? (
@@ -185,6 +203,7 @@ const SearchFiltersComponent = props => {
     <div className={classes}>
       <div className={css.filters}>
         {categoryFilterElement}
+        {subCategoryFilterElement}
         {priceFilterElement}
         {SizeFilterElement}
         {toggleSearchFiltersPanelButton}
@@ -219,6 +238,7 @@ SearchFiltersComponent.defaultProps = {
   resultsCount: null,
   searchingInProgress: false,
   categoryFilter: null,
+  subCategoryFilter: null,
   sizeFilter: null,
   priceFilter: null,
   dateRangeFilter: null,
@@ -236,6 +256,7 @@ SearchFiltersComponent.propTypes = {
   searchingInProgress: bool,
   onManageDisableScrolling: func.isRequired,
   categoriesFilter: propTypes.filterConfig,
+  subCategoryFilter:propTypes.filterConfig,
   sizeFilter: propTypes.filterConfig,
   priceFilter: propTypes.filterConfig,
   dateRangeFilter: propTypes.filterConfig,

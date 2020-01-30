@@ -54,9 +54,11 @@ export class SearchPageComponent extends Component {
   filters() {
     const {
       categories,
+      subCategoriesConfig,
       //amenities,
       priceFilterConfig,
       sizeFilterConfig,
+
       //dateRangeFilterConfig,
       keywordFilterConfig,
     } = this.props;
@@ -70,6 +72,10 @@ export class SearchPageComponent extends Component {
       categoryFilter: {
         paramName: 'pub_category',
         options: categories,
+      },
+      subCategoryFilter: {
+        paramName: 'pub_subCategory',
+        options: subCategoriesConfig,
       },
       priceFilter: {
         paramName: 'price',
@@ -226,6 +232,7 @@ export class SearchPageComponent extends Component {
             showAsModalMaxWidth={MODAL_BREAKPOINT}
             primaryFilters={{
               categoryFilter: filters.categoryFilter,
+              subCategoryFilter: filters.subCategoryFilter,
               //amenitiesFilter: filters.amenitiesFilter,
               priceFilter: filters.priceFilter,
               //dateRangeFilter: filters.dateRangeFilter,
@@ -248,6 +255,7 @@ SearchPageComponent.defaultProps = {
   searchParams: {},
   tab: 'listings',
   categories: config.custom.categories,
+  subCategoriesConfig:config.custom.subCategory,
   //amenities: config.custom.amenities,
   priceFilterConfig: config.custom.priceFilterConfig,
   //dateRangeFilterConfig: config.custom.dateRangeFilterConfig,

@@ -24,37 +24,36 @@
 .heroContainer {
   display: flex;
   flex-direction: column;
-  min-height: 300px;
-  height: 67.5vh;
-  max-height: 600px;
+  /*min-height: 300px;*/
+  /*height: 67.5vh;*/
+  /*max-height: 600px;*/
   padding: 0;
 
   @media (--viewportMedium) {
-    min-height: 500px;
-    height: 70vh;
+    /*min-height: 500px;
+    height: 70vh;*/
     max-height: none;
   }
 
   @media (--viewportLarge) {
-    max-height: 800px;
+    /*max-height: 800px;
     min-height: 600px;
-    height: calc(70vh - var(--topbarHeightDesktop));
+    height: calc(70vh - var(--topbarHeightDesktop));*/
   }
 }
 
 .hero {
-  flex-grow: 1;
-  justify-content: flex-end;
-  padding-bottom: 32px;
+  justify-content: center;
+  /*padding-bottom: 32px;*/
 
-  @media (--viewportMedium) {
-    padding-bottom: 83px;
-  }
+@media (--viewportMedium) {
+  /*padding-bottom: 83px;*/
+}
 
-  @media (--viewportLarge) {
-    justify-content: center;
-    padding-top: 60px;
-  }
+@media (--viewportLarge) {
+  justify-content: center;
+  /*padding-top: 60px;*/
+}
 }
 
 .sections {
@@ -68,37 +67,37 @@
 
 /* Square corners for the last section if it's even */
 .section:nth-of-type(2n):last-of-type {
-  @media (--viewportMedium) {
-    border-radius: 4px 4px 0 0;
-  }
+@media (--viewportMedium) {
+  border-radius: 4px 4px 0 0;
+}
 }
 
 /* Every other section has a light background */
 .section:nth-of-type(2n) {
   background-color: var(--matterColorLight);
-  @media (--viewportMedium) {
-    border-radius: 4px;
-  }
+@media (--viewportMedium) {
+  border-radius: 4px;
+}
 }
 
 .sectionContent {
   margin: var(--LandingPage_sectionMarginTop) 24px 51px 24px;
 
-  @media (--viewportMedium) {
-    max-width: 100%;
-    margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
-  }
+@media (--viewportMedium) {
+  max-width: 100%;
+  margin: var(--LandingPage_sectionMarginTopMedium) 24px 60px 24px;
+}
 
-  @media (--viewportLarge) {
-    max-width: 1128px;
-    padding: 0 36px 0 36px;
-    margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
-  }
+@media (--viewportLarge) {
+  max-width: 1128px;
+  padding: 0 36px 0 36px;
+  margin: var(--LandingPage_sectionMarginTopLarge) auto 93px auto;
+}
 
-  @media (--viewportXLarge) {
-    max-width: 1056px;
-    padding: 0;
-  }
+@media (--viewportXLarge) {
+  max-width: 1056px;
+  padding: 0;
+}
 }
 
 .sectionContentFirstChild {
@@ -118,13 +117,13 @@
   position: relative;
   top: calc(-1 * var(--LandingPage_sectionMarginTop));
 
-  @media (--viewportMedium) {
-    width: 192px;
-    height: 8px;
-    top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
-  }
+@media (--viewportMedium) {
+  width: 192px;
+  height: 8px;
+  top: calc(-1 * var(--LandingPage_sectionMarginTopMedium));
+}
 
-  @media (--viewportLarge) {
-    top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
-  }
+@media (--viewportLarge) {
+  top: calc(-1 * var(--LandingPage_sectionMarginTopLarge));
+}
 }

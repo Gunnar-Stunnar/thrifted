@@ -8,6 +8,8 @@ import { NamedLink } from '../../components';
 
 import css from './SectionLocations.css';
 
+import formal_attire from './images/formal_attire.JPG';
+import snow from './images/snow_image.JPG';
 
 //https://picsum.photos/200
 class LocationImage extends Component {
@@ -88,7 +90,7 @@ const SectionLocations = props => {
         {catagoryObjects([
           {
             name:"Formal Attire",
-            img:"https://picsum.photos/200",
+            img:formal_attire,
             searchQuery:"/"
           },          
           {
@@ -108,11 +110,11 @@ const SectionLocations = props => {
           },
           {
             name:"Snow",
-            img:"https://picsum.photos/200",
+            img:snow,
             searchQuery:"/"
           }
         ])}
-        <NamedLink name="SearchPage" to={"/"} className={css.moreLink}>MORE</NamedLink>
+
       </div>
     </div>
   );

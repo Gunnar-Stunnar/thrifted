@@ -6,6 +6,8 @@ import { NamedLink } from '../../components';
 
 import css from './SectionHero.css';
 
+import video_thrif from './video/video.mp4';
+
 const SectionHero = props => {
   const { rootClassName, className, loggedIn } = props;
 
@@ -13,6 +15,39 @@ const SectionHero = props => {
 
   return (
     <div className={classes}>
+      <div className={css.heroContent}>
+
+        <h1 className={css.heroMainTitle}>
+          <FormattedMessage id="SectionHero.title" />
+        </h1>
+
+        <video className={css.VideoPlayer} autoplay="autoplay" loop="loop">
+          <source src={video_thrif} type="video/mp4"></source>
+        </video>
+
+        <NamedLink
+          name={loggedIn ? "SearchListingsPage":"SignupPage"}
+          className={css.heroButton}
+        >
+
+          <FormattedMessage id= {loggedIn ? "SectionHero.browseButton":"SectionHero.SignUpButton"}/>
+        </NamedLink>
+      </div>
+    </div>
+  );
+};
+
+
+SectionHero.defaultProps = { rootClassName: null, className: null };
+
+SectionHero.propTypes = {
+  rootClassName: string,
+  className: string,
+};
+
+export default SectionHero;
+
+/*
       <div className={css.heroContent}>
         <h1 className={css.heroMainTitle}>
           <FormattedMessage id="SectionHero.title" />
@@ -28,17 +63,6 @@ const SectionHero = props => {
 
             <FormattedMessage id= {loggedIn ? "SectionHero.browseButton":"SectionHero.SignUpButton"}/>
           </NamedLink>
+                </div>
 
-      </div>
-    </div>
-  );
-};
-
-SectionHero.defaultProps = { rootClassName: null, className: null };
-
-SectionHero.propTypes = {
-  rootClassName: string,
-  className: string,
-};
-
-export default SectionHero;
+ */

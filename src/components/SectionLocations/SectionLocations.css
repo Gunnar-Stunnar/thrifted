@@ -3,32 +3,35 @@
 .title {
   @apply --marketplaceH1FontStyles;
 
-  margin-top: 0;
+  margin-top: 0px;
   max-width: 735px;
 
   @media (--viewportMedium) {
-    /*margin-bottom: 23px;*/
+    margin-bottom: 23px;
   }
 }
-.catagoryContainer{
 
-}
+
 
 
 .locations {
+  align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   margin-top: 0px;
   width:100%;
 
+@media (--viewportMedium) {
+  margin-top: 0;
+}
 
 }
 
 .location {
   /*width: 100%;*/
   margin-top: 25px;
-  max-width: 200px;
+  /*max-width: 200px;*/
   flex-grow: 1;
   margin-right: 15px;
   width:150px;
@@ -36,20 +39,23 @@
   &:hover {
     text-decoration: none;
   }
-
-
 }
 
 .location {
   @media (--viewportMedium) {
     margin-right: 15px;
     margin-bottom: 0;
+    width:25%;
+  }
+  @media (max-width: 414px) {
+    margin-right: 15px;
+    margin-bottom: 0;
+    width:100%;
   }
 }
 
 .location:last-of-type {
   @media (--viewportMedium) {
-    margin-right: 0;
   }
 }
 
@@ -59,7 +65,7 @@
   width: 100%;
   border-radius: 4px;
   transition: var(--transitionStyleButton);
-  max-width: 200px;
+  /*max-width: 200px;*/
   &:hover {
     transform: scale(1.02);
     box-shadow: var(--boxShadowSectionLocationHover);
@@ -101,8 +107,16 @@
 }
 
 .moreLink{
+  text-align: center;
   margin-top: auto;
   margin-bottom: auto;
+  /*width: 100%;*/
+  margin-top: 25px;
+  /*max-width: 200px;*/
+  flex-grow: 1;
+  margin-right: 15px;
+  width:150px;
+/* Remove link's hover effect */
 }
 
 .name{

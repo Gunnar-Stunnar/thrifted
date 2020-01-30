@@ -8,7 +8,7 @@ router.use(function timeLog (req, res, next) {
   next()
 });
 // define the saleComplete
-router.get('/saleComplete', saleComplete);
+router.post('/saleComplete', saleComplete);
 
 
 

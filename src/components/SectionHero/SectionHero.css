@@ -40,7 +40,7 @@
 }
 
 .root {
-  @apply --backgroundImage;
+  /*@apply --backgroundImage;*/
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -49,37 +49,51 @@
   /* Text positioning is done with paddings */
 }
 
+.VideoPlayer{
+  width:100%;
+  max-height: 500px;
+  border-radius: 10px;
+
+  @media (--viewportMedium) {
+    object-fit: contain;
+  }
+
+
+@apply --SectionHero_animation;
+  animation-delay: 0.8s;
+}
+
 .heroContent {
   margin: 0 24px 0 24px;
 
-  @media (--viewportMedium) {
-    margin: 0 7.5vw 0 7.5vw;
-  }
+@media (--viewportMedium) {
+  margin: 0 7.5vw 0 7.5vw;
+}
 
-  /* Special viewport for adjusting the heroContent's placement */
+/* Special viewport for adjusting the heroContent's placement */
 
-  @media only screen and (min-width: 1025px) and (max-width: 1366px) {
-    padding: 0 36px 0 36px;
-  }
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+  padding: 0 36px 0 36px;
+}
 
-  @media only screen and (min-width: 1367px) {
-    margin: 0 auto;
-    max-width: calc(1052px + 36px + 36px);
-    width: 100%;
-    padding: 0 36px 0 36px;
-  }
+@media only screen and (min-width: 1367px) {
+  margin: 0 auto;
+  max-width: calc(1052px + 36px + 36px);
+
+  padding: 0 36px 0 36px;
+}
 }
 
 .heroMainTitle {
   @apply --marketplaceHeroTitleFontStyles;
-  color: var(--matterColorLight);
+  color: var(--marketplaceColorLight);
 
   @apply --SectionHero_animation;
   animation-delay: 0.5s;
 
-  @media (--viewportMedium) {
-    max-width: var(--SectionHero_desktopTitleMaxWidth);
-  }
+@media (--viewportMedium) {
+  /*max-width: var(--SectionHero_desktopTitleMaxWidth);*/
+}
 }
 
 .heroSubTitle {
@@ -91,20 +105,22 @@
   @apply --SectionHero_animation;
   animation-delay: 0.65s;
 
-  @media (--viewportMedium) {
-    max-width: var(--SectionHero_desktopTitleMaxWidth);
-    margin: 0 0 63px 0;
-  }
+@media (--viewportMedium) {
+  max-width: var(--SectionHero_desktopTitleMaxWidth);
+  margin: 0 0 63px 0;
+}
 }
 
 .heroButton {
   @apply --marketplaceButtonStyles;
   @apply --SectionHero_animation;
+  margin: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  animation-delay: 1.2s;
 
-  animation-delay: 0.8s;
-
-  @media (--viewportMedium) {
-    display: block;
-    width: 260px;
-  }
+@media (--viewportMedium) {
+  display: block;
+  width: 400px;
+}
 }

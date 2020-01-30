@@ -5,6 +5,7 @@ import moment from 'moment';
 import config from '../../config';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import { isTransactionsTransitionInvalidTransition, storableError } from '../../util/errors';
+import {postData} from '../../util/fetchHelper';
 import {
   txIsEnquired,
   getReview1Transition,
@@ -360,32 +361,16 @@ export const fetchTransaction = (id, txRole) => (dispatch, getState, sdk) => {
     });
 };
 
-let testVariable = null;
-
-const closeListing = (response,sdk) =>{
-  console.log("----------------");
-  testVariable = response;
-  console.log(response.data.attributes.protectedData.ItemId);
-  // add data to say listing closed
-  sdk.ownListings.update({
-    id: new UUID(response.data.attributes.protectedData.ItemId),
-    publicData: {
-      sold:true
-    }
-  },{ expand: true }).then(response => {
-    return response;
-  });
-
-  //close listing
-  sdk.ownListings
-    .close({ id:new UUID(response.data.attributes.protectedData.ItemId)}, { expand: true })
-    .then(response => {
-      //dispatch(closeListingSuccess(response));
-      return response;
-    })
+const closeListing = (response) =>{
+  console.log(response);
+  postData("/api/saleComplete",{
+    TransactionID:response.data.data.id.uuid
+  })
+    .then(data => {console.log(data)})
     .catch(e => {
-      //dispatch(closeListingError(storableError(e)));
+      console.log(e);
     });
+
 };
 
 
@@ -398,7 +383,7 @@ export const receivedSale = id => (dispatch, getState, sdk) => {
       dispatch(addMarketplaceEntities(response));
       dispatch(ReceiveSaleSuccess());
       dispatch(fetchCurrentUserNotifications());
-      dispatch(closeListing(response,sdk));
+      dispatch(closeListing(response));
 
       return response;
     })

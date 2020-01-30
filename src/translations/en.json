@@ -696,6 +696,7 @@
   "SavedCardDetails.savedPaymentMethodPlaceholderDesktop": "•••• •••• •••• {last4Digits}",
   "SavedCardDetails.savedPaymentMethodPlaceholderMobile": "…{last4Digits}",
   "SearchFilters.categoryLabel": "Category",
+  "SearchFilters.subCategoryLabel": "subCategory",
   "SearchFilters.sizeLabel": "Size",
   "SearchFilters.filtersButtonLabel": "Filters",
   "SearchFilters.foundResults": "{count, number} {count, plural, one {result} other {results}}",

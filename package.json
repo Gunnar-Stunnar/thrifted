@@ -51,6 +51,7 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "seedrandom": "^3.0.3",
+    "sharetribe-flex-integration-sdk": "^1.1.0",
     "sharetribe-flex-sdk": "^1.8.0",
     "sharetribe-scripts": "3.1.1",
     "smoothscroll-polyfill": "^0.4.0",
@@ -91,7 +92,7 @@
     "test-ci": "sharetribe-scripts test --runInBand",
     "eject": "sharetribe-scripts eject",
     "start": "node --icu-data-dir=node_modules/full-icu server/index.js",
-    "dev-server": "export NODE_ENV=development PORT=4000 REACT_APP_CANONICAL_ROOT_URL=http://localhost:4000&&yarn run build&&nodemon --watch server server/index.js",
+    "dev-server": "export NODE_ENV=development PORT=4000 REACT_APP_CANONICAL_ROOT_URL=http://localhost:4000 && npm run build && nodemon --watch server server/index.js",
     "heroku-postbuild": "npm run build",
     "translate": "node scripts/translations.js"
   },
