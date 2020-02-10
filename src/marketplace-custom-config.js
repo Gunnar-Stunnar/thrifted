@@ -1,49 +1,16 @@
 /*
  * Marketplace specific configuration.
  */
-/*
-export const amenities = [
-  {
-    key: 'towels',
-    label: 'Towels',
-  },
-  {
-    key: 'bathroom',
-    label: 'Bathroom',
-  },
-  {
-    key: 'swimming_pool',
-    label: 'Swimming pool',
-  },
-  {
-    key: 'own_drinks',
-    label: 'Own drinks allowed',
-  },
-  {
-    key: 'jacuzzi',
-    label: 'Jacuzzi',
-  },
-  {
-    key: 'audiovisual_entertainment',
-    label: 'Audiovisual entertainment',
-  },
-  {
-    key: 'barbeque',
-    label: 'Barbeque',
-  },
-  {
-    key: 'own_food_allowed',
-    label: 'Own food allowed',
-  },
-];*/
+
+
 
 export const size = [
   {
-    key:"XXS",
+    key:"xxs",
     label:'XXS'
   },
   {
-    key:"XS",
+    key:"xs",
     label:'XS'
   },
   {
@@ -51,76 +18,118 @@ export const size = [
     label:'small'
   },
   {
-    key:"Medium",
+    key:"medium",
     label:'Medium'
   },
   {
-    key:"Large",
+    key:"large",
     label:'Large'
   },
   {
-    key:"XL",
+    key:"xl",
     label:'XL'
   },
   {
-    key:"XXL",
+    key:"xxl",
     label:'XXL'
   },
   {
-    key:"One Size",
-    label:'One Size'
-  },
+    key:"one-size",
+    label:"one-size"
+  }
 
 ];
 
 export const condition = [
   {
-    key:"Perfect",
+    key:"perfect",
     label:'Perfect'
   },
   {
-    key:"Great",
+    key:"great",
     label:'Great'
   },
   {
-    key:"Good",
+    key:"good",
     label:'Good'
   },
   {
-    key:"Lightly Used",
+    key:"lightly Used",
     label:'Lightly Used'
   },
   {
-    key:"Used",
+    key:"used",
     label:'Used'
   },
 ];
 
 
 export const categories = [
-  { key: 'Men', label: 'Men\'s Clothing' },
-  { key: 'Women', label: 'Women\'s Clothing' },
-  { key: 'Gear', label: 'Gear (Outdoor/Sporting)' },
-  { key: 'party', label: 'Costumes + Party' },
-  { key: 'Shoes', label: 'Shoes'}
+  {
+    key: 'mens',
+    label: 'Men\'s',
+    subCategories: [
+      { key: 'pants', label: 'Pants',},
+      { key: 'men-shirts', label: 'Shirts',},
+      { key: 'men-jackets', label: 'Jackets',},
+      { key: 'men-overalls', label:'overalls' },
+      { key: 'hats', label:'hats'}
+    ],
+  },
+  {
+    key: 'womens',
+    label: 'Women\'s',
+    subCategories: [
+      { key: 'women-shirts', label: 'Shirts',},
+      { key: 'bottoms', label: 'Bottoms',},
+      { key: 'denim', label: 'Denim',},
+
+    ],
+  },
+  //{ key: 'Clothing', label: 'Clothing', },
+  { key: 'Gear',
+    label: 'Gear (Outdoor/Sporting)',
+    subCategories:[
+      { key: 'rock-climbing', label: 'Rock Climbing' },
+      { key: 'ski-and-snow', label: 'Ski and Snow' },
+      { key: 'camping-and-hiking', label:'Camping and Hiking'},
+      { key: 'wheels', label: 'Wheels' },
+      { key: 'nets-balls-and-bats', label: 'Nets, Balls, And Bats' }
+    ]
+  },
+  { key: 'party',
+    label: 'Costumes + Party',
+    subCategories:[
+      { key: 'school-spirit-wear', label: 'School Spirit Wear' },
+      { key: 'retro-ski-gear', label: 'Retro Ski Gear' },
+      { key: '70-s-disco', label: '70\'s Disco' },
+      { key: '90-s-grunge', label: '90\'s Grunge' },
+      { key: 'funky-printed-shirts', label: 'Funky Printed Shirts' }
+    ]
+  },
+  { key: 'Shoes',
+    label: 'Shoes',
+    subCategories:[
+      { key: 'sneakers', label: 'sneakers' },
+      { key: 'high-heels', label: 'high heels' },
+      { key: 'sandals', label: 'sandals' },
+      { key: 'boots', label: 'boots' },
+      { key: 'dress shoes', label: 'flats' }
+    ]
+  }
 ];
 
+/*
 export const subCategory = {
-  Men:[
-    { key: 'shirt', label: 'Shirts' },
+  Clothing:[
+    { key: 'men', label: 'Men\'s' },
+    { key: 'women', label: 'Women\'s' },
+    { key: 'unisex', label: 'Unisex' },
     { key: 'pants', label: 'Pants' },
+    { key: 'shirt', label: 'Shirts' },
     { key: 'jackets', label: 'Jackets' },
     { key: 'Overalls', label: 'Overalls' },
     { key: 'Hats', label: 'Hats' }
-  ],
-  Women:[
-    { key: 'shirt1', label: 'Shirts' },
-    { key: 'bottoms', label: 'Pants' },
-    { key: 'Denim', label: 'Denim' },
-    { key: 'jackets1', label: 'Jacket' },
-    { key: 'overalls1', label: 'Overalls' },
-    { key: 'dresses', label: 'Dresses' },
-    { key: 'swim-and-accessories', label: 'Swim & Accessories' }
   ],
   Gear:[
     { key: 'rock-climbing', label: 'Rock Climbing' },
@@ -138,7 +147,7 @@ export const subCategory = {
     { key: 'funky-printed-shirts', label: 'Funky Printed Shirts' }
   ]
 };
-
+*/
 
 // Price filter configuration
 // Note: unlike most prices this is not handled in subunits

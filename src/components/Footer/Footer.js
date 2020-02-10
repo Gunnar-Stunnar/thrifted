@@ -86,16 +86,7 @@ const Footer = props => {
                     <FormattedMessage id="Footer.toNewListingPage" />
                   </NamedLink>
                 </li>
-                <li className={css.listItem}>
-                  <NamedLink name="AboutPage" className={css.link}>
-                    <FormattedMessage id="Footer.toAboutPage" />
-                  </NamedLink>
-                </li>
-                <li className={css.listItem}>
-                  <NamedLink name="LandingPage" className={css.link}>
-                    <FormattedMessage id="Footer.toFAQPage" />
-                  </NamedLink>
-                </li>
+
                 <li className={css.listItem}>
                   <NamedLink name="LandingPage" className={css.link}>
                     <FormattedMessage id="Footer.toHelpPage" />
@@ -144,6 +135,19 @@ const Footer = props => {
     </div>
   );
 };
+
+/*
+                <li className={css.listItem}>
+                  <NamedLink name="AboutPage" className={css.link}>
+                    <FormattedMessage id="Footer.toAboutPage" />
+                  </NamedLink>
+                </li>
+                <li className={css.listItem}>
+                  <NamedLink name="LandingPage" className={css.link}>
+                    <FormattedMessage id="Footer.toFAQPage" />
+                  </NamedLink>
+                </li>
+ */
 
 Footer.defaultProps = {
   rootClassName: null,

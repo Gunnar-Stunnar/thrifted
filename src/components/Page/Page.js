@@ -10,8 +10,10 @@ import { metaTagProps } from '../../util/seo';
 import { canonicalRoutePath } from '../../util/routes';
 import { CookieConsent } from '../../components';
 
+/*
 import facebookImage from '../../assets/saunatimeFacebook-1200x630.jpg';
-import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';
+import twitterImage from '../../assets/saunatimeTwitter-600x314.jpg';*/
+
 import css from './Page.css';
 
 const preventDefault = e => {
@@ -72,13 +74,13 @@ class PageComponent extends Component {
       author,
       contentType,
       description,
-      facebookImages,
+      //facebookImages,
       published,
       schema,
       tags,
       title,
       twitterHandle,
-      twitterImages,
+      //twitterImages,
       updated,
     } = this.props;
 
@@ -99,7 +101,7 @@ class PageComponent extends Component {
     const schemaDescription = intl.formatMessage({ id: 'Page.schemaDescription' });
     const metaTitle = title || schemaTitle;
     const metaDescription = description || schemaDescription;
-    const facebookImgs = facebookImages || [
+    /*const facebookImgs = facebookImages || [
       {
         name: 'facebook',
         url: `${canonicalRootURL}${facebookImage}`,
@@ -114,14 +116,14 @@ class PageComponent extends Component {
         width: 600,
         height: 314,
       },
-    ];
+    ];*/
 
     const metaToHead = metaTagProps({
       author,
       contentType,
       description: metaDescription,
-      facebookImages: facebookImgs,
-      twitterImages: twitterImgs,
+      /*facebookImages: facebookImgs,
+      twitterImages: twitterImgs,*/
       published,
       tags,
       title: metaTitle,
@@ -225,8 +227,8 @@ PageComponent.defaultProps = {
   author: null,
   contentType: 'website',
   description: null,
-  facebookImages: null,
-  twitterImages: null,
+  /*facebookImages: null,
+  twitterImages: null,*/
   published: null,
   referrer: null,
   schema: null,
@@ -248,7 +250,7 @@ PageComponent.propTypes = {
   author: string,
   contentType: string, // og:type
   description: string, // page description
-  facebookImages: arrayOf(
+  /*facebookImages: arrayOf(
     shape({
       width: number.isRequired,
       height: number.isRequired,
@@ -261,7 +263,7 @@ PageComponent.propTypes = {
       height: number.isRequired,
       url: string.isRequired,
     })
-  ),
+  ),*/
   published: string, // article:published_time
   schema: oneOfType([object, array]), // http://schema.org
   tags: string, // article:tag

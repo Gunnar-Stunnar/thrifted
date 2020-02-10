@@ -437,7 +437,10 @@ export class ListingPageComponent extends Component {
                       options={conditionConfig} publicData={publicData} itemsFeatureName={"condition"} FeatureNameId={'ListingPage.featuresTitleCondition'}
                     />
                     <SectionFeaturesMaybe
-                      options={sizeConfig} publicData={publicData} itemsFeatureName={"size"} FeatureNameId={'ListingPage.featuresTitleSize'}
+                      options={sizeConfig} publicData={publicData} itemsFeatureName={"Size"} FeatureNameId={'ListingPage.featuresTitleSize'}
+                    />
+                    <SectionFeaturesMaybe
+                      options={sizeConfig} publicData={publicData} itemsFeatureName={"Size"} FeatureNameId={'ListingPage.featuresTitleSize'}
                     />
                 </div>
                   <SectionDescriptionMaybe description={description}/>
@@ -496,6 +499,7 @@ ListingPageComponent.defaultProps = {
   sendEnquiryError: null,
   categoriesConfig: config.custom.categories,
   sizeConfig: config.custom.size,
+  shoeConfig: config.custom.shoe_size,
   conditionConfig: config.custom.condition
 };
 

@@ -11,6 +11,7 @@ import {
   txIsPaymentExpired,
   txIsPaymentPending,
   txIsRequested,
+  txIsIssue,
   txHasBeenDelivered,
 } from '../../util/transaction';
 import { LINE_ITEM_NIGHT, LINE_ITEM_DAY, propTypes } from '../../util/types';
@@ -47,6 +48,7 @@ import PanelHeading, {
   HEADING_REQUESTED,
   HEADING_ACCEPTED,
   HEADING_DECLINED,
+  HEADING_SI,
   HEADING_CANCELED,
   HEADING_DELIVERED,
 } from './PanelHeading';
@@ -254,6 +256,11 @@ export class TransactionPanelComponent extends Component {
       } else if (txIsDeclined(tx)) {
         return {
           headingState: HEADING_DECLINED,
+          showDetailCardHeadings: isCustomer,
+        };
+      }else if (txIsIssue(tx)) {
+        return {
+          headingState: HEADING_SI,
           showDetailCardHeadings: isCustomer,
         };
       } else if (txIsCanceled(tx)) {

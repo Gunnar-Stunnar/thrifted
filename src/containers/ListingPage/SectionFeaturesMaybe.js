@@ -9,7 +9,7 @@ const SectionFeaturesMaybe = props => {
   if (!publicData) {
     return null;
   }
-
+  console.log(publicData);
   const selectedOptions = publicData && publicData[itemsFeatureName] ? publicData[itemsFeatureName] : [];
   return itemsFeatureName ? (
     <div className={css.sectionFeatures}>

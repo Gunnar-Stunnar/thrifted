@@ -37,6 +37,8 @@ html {
   cursor: default; /* 2 */
   -ms-text-size-adjust: 100%; /* 3 */
   -webkit-text-size-adjust: 100%; /* 3 */
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* Sections (https://html.spec.whatwg.org/multipage/semantics.html#sections)
@@ -62,6 +64,8 @@ section {
 body {
   margin: 0;
   background: pink;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /**

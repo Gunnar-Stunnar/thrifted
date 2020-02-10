@@ -12,6 +12,7 @@ export const HEADING_PAYMENT_EXPIRED = 'payment-expired';
 export const HEADING_REQUESTED = 'requested';
 export const HEADING_ACCEPTED = 'accepted';
 export const HEADING_DECLINED = 'declined';
+export const HEADING_SI = undefined;
 export const HEADING_CANCELED = 'canceled';
 export const HEADING_DELIVERED = 'deliveded';
 
@@ -110,6 +111,8 @@ const PanelHeading = props => {
   const defaultRootClassName = isCustomer ? css.headingOrder : css.headingSale;
   const titleClasses = classNames(rootClassName || defaultRootClassName, className);
   const listingLink = createListingLink(listingId, listingTitle, listingDeleted);
+
+  console.log(panelHeadingState);
 
   switch (panelHeadingState) {
     case HEADING_ENQUIRED:
@@ -229,6 +232,21 @@ const PanelHeading = props => {
           isCustomerBanned={isCustomerBanned}
         />
       );
+    case HEADING_SI:
+      return isCustomer ? (
+        <HeadingCustomer
+          className={titleClasses}
+          id="TransactionPanel.orderInIssueTitle"
+          values={{ customerName, listingLink }}
+        />
+      ) : (
+        <HeadingProvider
+          className={titleClasses}
+          id="TransactionPanel.orderInIssueTitle"
+          values={{ customerName, listingLink }}
+          isCustomerBanned={isCustomerBanned}
+        />
+      );
     case HEADING_CANCELED:
       return isCustomer ? (
         <HeadingCustomer
@@ -260,7 +278,7 @@ const PanelHeading = props => {
         />
       );
     default:
-      console.warning('Unknown state given to panel heading.');
+      console.log('Unknown state given to panel heading.');
       return null;
   }
 };

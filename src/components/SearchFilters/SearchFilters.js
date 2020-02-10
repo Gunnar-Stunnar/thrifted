@@ -28,6 +28,7 @@ const initialValue = (queryParams, paramName) => {
 
 // resolve initial values for a multi value filter
 const initialValues = (queryParams, paramName) => {
+   console.log(queryParams);
   return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
 };
 
@@ -81,8 +82,10 @@ const SearchFiltersComponent = props => {
     ? initialValue(urlQueryParams, categoryFilter.paramName)
     : null;
 
-  const initialSubCategory = categoryFilter
-    ? initialValue(urlQueryParams, categoryFilter.paramName)
+  console.log(subCategoryFilter.paramName);
+
+  const initialSubCategory = subCategoryFilter
+    ? initialValues(urlQueryParams, subCategoryFilter.paramName)
     : null;
 
 
@@ -134,6 +137,7 @@ const SearchFiltersComponent = props => {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
 
+
   const categoryFilterElement = categoryFilter ? (
     <SelectSingleFilter
       urlParam={categoryFilter.paramName}
@@ -145,13 +149,25 @@ const SearchFiltersComponent = props => {
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
   ) : null;
-  const subCategoryFilterElement = subCategoryFilter && initialCategory  ? (
+
+  let index = -1;
+
+  categoryFilter.options.find(function(item, i){
+    if(item.key === initialCategory){
+      index = i;
+      return i;
+    }
+  });
+
+  const subCategoryFilterElement = initialCategory  ? (
     <SelectMultipleFilter
+      id={'SearchFilters.subCategoryLabel'}
+      name="Category Filter"
       urlParam={subCategoryFilter.paramName}
       label={subCategoryLabel}
-      onSelect={handleSelectOptions}
+      onSubmit={handleSelectOptions}
       showAsPopup
-      options={subCategoryFilter.options[initialCategory]}
+      options={categoryFilter.options[index].subCategories}
       initialValue={initialSubCategory}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />

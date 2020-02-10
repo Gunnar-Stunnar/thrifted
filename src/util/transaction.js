@@ -40,6 +40,9 @@ export const TRANSITION_RECEIVED = 'transition/receive';
 export const TRANSITION_DECLINED2 = 'transition/decline2';
 export const TRANSITION_EXPIRE2 = 'transition/expire2';
 
+export const TRANSITION_OPRECEIVED = 'transition/OpReceived';
+export const TRANSITION_OPDECLINE = 'transition/OpDecline';
+
 // The backend automatically expire the transaction.
 export const TRANSITION_EXPIRE = 'transition/expire';
 
@@ -161,7 +164,8 @@ const stateDescription = {
     },
     [STATE_SELLERISSUE]:{
       on:{
-
+      [TRANSITION_OPRECEIVED]:STATE_DELIVERED,
+        [TRANSITION_OPDECLINE]:STATE_DECLINED
       }
     },
     [STATE_CANCELED]: {},
@@ -259,6 +263,8 @@ export const txIsCanceled = tx =>
 export const txIsDelivered = tx =>
   getTransitionsToState(STATE_DELIVERED).includes(txLastTransition(tx));
 
+export const txIsIssue = tx =>
+  getTransitionsToState(STATE_SELLERISSUE).includes(txLastTransition(tx));
 
 const firstReviewTransitions = [
   ...getTransitionsToState(STATE_REVIEWED_BY_CUSTOMER),
