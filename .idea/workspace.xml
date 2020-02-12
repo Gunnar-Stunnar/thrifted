@@ -2,40 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="504b7487-178f-494d-8a05-e54b4bf69819" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/TopbarDesktop/MenuIcon.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/FAQPage/FAQPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/FAQPage/FAQPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/UserTrustPage/UserTrustPage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/UserTrustPage/UserTrustPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/containers/UserTrustPage/about-us-1056.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forms/TopbarSearchForm/IconHourGlass.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/AboutPage/Aboutus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/containers/AboutPage/Aboutus2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/Menu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PrivacyPolicy/PrivacyPolicy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PrivacyPolicy/PrivacyPolicy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PropertyGroup/PropertyGroup.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PropertyGroup/PropertyGroup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/PropertyGroup/PropertyGroup.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PropertyGroup/PropertyGroup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SearchFilters/SearchFilters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SearchFilters/SearchFilters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StripeConnectAccountStatusBox/StripeConnectAccountStatusBox.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StripeConnectAccountStatusBox/StripeConnectAccountStatusBox.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StripeConnectAccountStatusBox/StripeConnectAccountStatusBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StripeConnectAccountStatusBox/StripeConnectAccountStatusBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TermsOfService/TermsOfService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TermsOfService/TermsOfService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Topbar/Topbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Topbar/Topbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ListingPage/ListingPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ListingPage/ListingPage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ListingPage/ListingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ListingPage/ListingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/ListingPage/SectionFeaturesMaybe.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/ListingPage/SectionFeaturesMaybe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/SearchPage/SearchPage.duck.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SearchPage/SearchPage.duck.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/SearchPage/SearchPage.helpers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SearchPage/SearchPage.helpers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/SearchPage/SearchPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/SearchPage/SearchPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/reducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/reducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/forms/TopbarSearchForm/TopbarSearchForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/TopbarSearchForm/TopbarSearchForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/forms/TopbarSearchForm/TopbarSearchForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/TopbarSearchForm/TopbarSearchForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marketplace-custom-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/marketplace-custom-config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/marketplace.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/marketplace.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routeConfiguration.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routeConfiguration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AboutPage/AboutPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AboutPage/AboutPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/AboutPage/AboutPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/AboutPage/AboutPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forms/PaymentMethodsForm/PaymentMethodsForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/PaymentMethodsForm/PaymentMethodsForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/translations/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/translations/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/validators.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,31 +24,10 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/forms/TopbarSearchForm/TopbarSearchForm.css">
+        <entry file="file://$PROJECT_DIR$/src/forms/SignupForm/SignupForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="216" column="11" lean-forward="true" selection-start-line="216" selection-start-column="11" selection-end-line="216" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Footer/Footer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="89" column="42" selection-start-line="89" selection-start-column="42" selection-end-line="89" selection-end-column="42" />
+            <state relative-caret-position="229">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -82,10 +36,71 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/FAQPage/FAQPage.js">
+        <entry file="file://$PROJECT_DIR$/src/util/validators.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="131" lean-forward="true" selection-start-line="131" selection-end-line="131" />
+            <state relative-caret-position="579">
+              <caret line="111" column="2" lean-forward="true" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forms/PaymentMethodsForm/PaymentMethodsForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1484">
+              <caret line="304" column="46" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/translations/en.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="954" column="36" selection-start-line="954" selection-start-column="36" selection-end-line="954" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/PaymentMethodsPage/PaymentMethodsPage.duck.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-406">
+              <folding>
+                <element signature="e#0#57#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/containers/PaymentMethodsPage/PaymentMethodsPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/routeConfiguration.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="287" column="6" selection-start-line="287" selection-start-column="6" selection-end-line="287" selection-end-column="6" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -94,19 +109,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.env">
+        <entry file="file://$PROJECT_DIR$/src/containers/AboutPage/AboutPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TermsOfService/TermsOfService.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+            <state relative-caret-position="377">
+              <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -115,43 +121,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/TermsOfService/TermsOfService.css">
+        <entry file="file://$PROJECT_DIR$/src/containers/AboutPage/AboutPage.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/routeConfiguration.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="283" column="4" selection-start-line="283" selection-start-column="4" selection-end-line="283" selection-end-column="4" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/containers/TermsOfServicePage/TermsOfServicePage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="574">
+              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -167,22 +140,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mobile</find>
-      <find>mobileInput</find>
-      <find>svg</find>
-      <find>desktop</find>
-      <find>StripeConnectAccountStatusBox.getVerifiedButton</find>
-      <find>get veri</find>
-      <find>inProgress</find>
-      <find>buyto</find>
-      <find>.secondaryButton</find>
       <find>NamedLInk</find>
       <find>SearchPage</find>
       <find>stripeConnectAccountStatusBox</find>
       <find>handleGetStripeConnectAccountLink</find>
       <find>onGetStripeConnectAccountLink</find>
       <find>accountId</find>
-      <find>content</find>
       <find>getVerifiedButton</find>
       <find>namedLink</find>
       <find>UserTrustPage.HomeButton</find>
@@ -196,7 +159,17 @@
       <find>span</find>
       <find>terms</find>
       <find>item</find>
+      <find>@colorado</find>
+      <find>emailFormatValid</find>
+      <find>FinalForm</find>
+      <find>TopbarDesktop</find>
       <find>FAQ</find>
+      <find>About</find>
+      <find>about</find>
+      <find>defaultprops</find>
+      <find>coverImage</find>
+      <find>imageContainer</find>
+      <find>content</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -225,13 +198,11 @@
         <option value="$PROJECT_DIR$/src/forms/TopbarSearchForm/TopbarSearchForm.js" />
         <option value="$PROJECT_DIR$/src/marketplace.css" />
         <option value="$PROJECT_DIR$/src/containers/reducers.js" />
-        <option value="$PROJECT_DIR$/src/translations/en.json" />
         <option value="$PROJECT_DIR$/src/components/SectionHero/SectionHero.js" />
         <option value="$PROJECT_DIR$/src/components/StripeConnectAccountStatusBox/StripeConnectAccountStatusBox.css" />
         <option value="$PROJECT_DIR$/src/components/StripeConnectAccountStatusBox/StripeConnectAccountStatusBox.js" />
         <option value="$PROJECT_DIR$/src/containers/UserTrustPage/UserTrustPage.js" />
         <option value="$PROJECT_DIR$/src/containers/UserTrustPage/UserTrustPage.css" />
-        <option value="$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.js" />
         <option value="$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.css" />
         <option value="$PROJECT_DIR$/src/forms/TopbarSearchForm/TopbarSearchForm.css" />
         <option value="$PROJECT_DIR$/src/components/Topbar/Topbar.js" />
@@ -240,8 +211,15 @@
         <option value="$PROJECT_DIR$/src/components/TermsOfService/TermsOfService.js" />
         <option value="$PROJECT_DIR$/src/containers/index.js" />
         <option value="$PROJECT_DIR$/src/components/Footer/Footer.js" />
-        <option value="$PROJECT_DIR$/src/routeConfiguration.js" />
         <option value="$PROJECT_DIR$/src/containers/FAQPage/FAQPage.js" />
+        <option value="$PROJECT_DIR$/src/forms/SignupForm/SignupForm.js" />
+        <option value="$PROJECT_DIR$/src/util/validators.js" />
+        <option value="$PROJECT_DIR$/src/forms/PaymentMethodsForm/PaymentMethodsForm.js" />
+        <option value="$PROJECT_DIR$/src/translations/en.json" />
+        <option value="$PROJECT_DIR$/src/routeConfiguration.js" />
+        <option value="$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.js" />
+        <option value="$PROJECT_DIR$/src/containers/AboutPage/AboutPage.css" />
+        <option value="$PROJECT_DIR$/src/containers/AboutPage/AboutPage.js" />
       </list>
     </option>
   </component>
@@ -272,61 +250,6 @@
               <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
               <item name="thrifted" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Button" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="EditListingWizard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TermsOfService" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Topbar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TopbarDesktop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TopbarMobileMenu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -335,53 +258,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="containers" type="462c0819:PsiDirectoryNode" />
               <item name="AboutPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="EditListingPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="FAQPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="containers" type="462c0819:PsiDirectoryNode" />
-              <item name="PrivacyPolicyPage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-              <item name="StripeConnectAccountForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-              <item name="TopbarSearchForm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="thrifted" type="b2602c69:ProjectViewProjectNode" />
-              <item name="thrifted" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="translations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -393,7 +269,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/containers/FAQPage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/containers/AboutPage" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -401,6 +277,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/containers/AboutPage" />
       <recent name="$PROJECT_DIR$/src/containers/FAQPage" />
       <recent name="$PROJECT_DIR$/src/containers/UserTrustPage" />
       <recent name="$PROJECT_DIR$/src/components/TopbarDesktop" />
@@ -429,12 +306,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1581362825309</updated>
-      <workItem from="1581362826528" duration="47083000" />
+      <workItem from="1581362826528" duration="51402000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47083000" />
+    <option name="totallyTimeSpent" value="51402000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
@@ -446,7 +323,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.23101604" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -496,68 +373,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/LocationAutocompleteInput/LocationAutocompleteInput.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="30" selection-start-line="30" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SearchFilters/SearchFilters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="83" column="46" selection-start-line="83" selection-start-column="46" selection-end-line="83" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TopbarDesktop/hambergerLine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Topbar/SearchIcon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Topbar/MenuIcon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-110">
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TopbarDesktop/MenuIcon.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Topbar/Topbar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="20" column="21" lean-forward="true" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Menu/Menu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1436" />
@@ -757,13 +572,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/translations/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="1005" column="85" selection-start-line="1005" selection-start-column="85" selection-end-line="1005" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/UserTrustPage/UserTrustPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -778,16 +586,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -896,16 +694,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/routeConfiguration.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="283" column="4" selection-start-line="283" selection-start-column="4" selection-end-line="283" selection-end-column="4" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/FAQPage/FAQPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
@@ -918,8 +706,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" selection-end-column="28" />
+        <state relative-caret-position="465">
+          <caret line="31" column="2" lean-forward="true" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/SignupForm/SignupForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/PaymentMethodsPage/PaymentMethodsPage.duck.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-406">
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/PaymentMethodsPage/PaymentMethodsPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/util/validators.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="579">
+          <caret line="111" column="2" lean-forward="true" selection-start-line="111" selection-start-column="2" selection-end-line="111" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/translations/en.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="954" column="36" selection-start-line="954" selection-start-column="36" selection-end-line="954" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/routeConfiguration.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="287" column="6" selection-start-line="287" selection-start-column="6" selection-end-line="287" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/PaymentMethodsForm/PaymentMethodsForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1484">
+          <caret line="304" column="46" selection-start-line="304" selection-start-column="46" selection-end-line="304" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/TopbarDesktop/TopbarDesktop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AboutPage/AboutPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/AboutPage/AboutPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="56" column="18" selection-start-line="56" selection-start-column="18" selection-end-line="56" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
