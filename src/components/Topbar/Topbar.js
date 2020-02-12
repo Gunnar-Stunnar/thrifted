@@ -209,9 +209,10 @@ class TopbarComponent extends Component {
             <MenuIcon className={css.menuIcon} />
             {notificationDot}
           </Button>
+
           <NamedLink
             className={css.home}
-            name="LandingPage"
+            name= {isAuthenticated ? "SearchPage":"LandingPage"}
             title={intl.formatMessage({ id: 'Topbar.logoIcon' })}
           >
             <Logo format="mobile" />
@@ -223,6 +224,8 @@ class TopbarComponent extends Component {
           >
             <SearchIcon className={css.searchMenuIcon} />
           </Button>
+
+
         </div>
         <div className={css.desktop}>
           <TopbarDesktop

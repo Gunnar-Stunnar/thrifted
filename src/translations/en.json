@@ -336,7 +336,10 @@
   "ListingPage.errorLoadingListingMessage": "Could not load listing. Please try again.",
   "ListingPage.errorLoadingListingTitle": "Error in loading listing",
   "ListingPage.featuresTitleSize": "size",
+  "ListingPage.featuresTitleShoeSize": "shoe size",
   "ListingPage.featuresTitleCondition": "condition",
+  "ListingPage.featuresTitleBrand": "Brand",
+  "ListingPage.featuresTitleColor":"color",
   "ListingPage.finishListing": "Finish listing",
   "ListingPage.hostedBy": "Hosted by {name}",
   "ListingPage.loadingListingMessage": "Loading listing…",
@@ -953,7 +956,7 @@
   "TopbarMobileMenu.greeting": "Hello {displayName}",
   "TopbarMobileMenu.inboxLink": "Inbox",
   "TopbarMobileMenu.loginLink": "Log in",
-  "TopbarMobileMenu.logoutLink": "Log out",
+  "TopxfbarMobileMenu.logoutLink": "Log out",
   "TopbarMobileMenu.newListingLink": "+ Add your item",
   "TopbarMobileMenu.profileSettingsLink": "Profile settings",
   "TopbarMobileMenu.signupLink": "Sign up",
@@ -1018,5 +1021,6 @@
   "UserCard.showFullBioLink": "more",
   "UserCard.viewProfileLink": "View profile",
   "UserDisplayName.banned": "Banned user",
-  "UserDisplayName.deleted": "Deleted user"
+  "UserDisplayName.deleted": "Deleted user",
+  "UserTrustPage.HomeButton": "Home"
 }

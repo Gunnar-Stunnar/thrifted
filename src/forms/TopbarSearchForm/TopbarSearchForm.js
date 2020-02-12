@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { Form as FinalForm, Field } from 'react-final-form';
 import { intlShape, injectIntl } from '../../util/reactIntl';
 import classNames from 'classnames';
-import { Form, LocationAutocompleteInput } from '../../components';
+import { Button, Form, LocationAutocompleteInput } from '../../components';
+import IconHourGlass from './IconHourGlass';
 
 import css from './TopbarSearchForm.css';
 
@@ -24,6 +25,7 @@ class TopbarSearchFormComponent extends Component {
     }
   }
 
+
   render() {
     return (
       <FinalForm
@@ -40,6 +42,11 @@ class TopbarSearchFormComponent extends Component {
           const classes = classNames(rootClassName, className);
           return (
             <Form className={classes} onSubmit={handleSubmit}>
+              <div className={isMobile ? css.mobileSearchContainer:css.desktopSearchContainer}>
+              <div className={isMobile
+                ? css.mobileIcon:css.desktopIcon}>
+                <IconHourGlass/>
+              </div>
               <Field
                 name="keywords"
                 render={({ input, meta }) => {
@@ -62,6 +69,7 @@ class TopbarSearchFormComponent extends Component {
                   );
                 }}
               />
+              </div>
             </Form>
           );
         }}

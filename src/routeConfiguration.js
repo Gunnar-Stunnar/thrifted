@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   AboutPage,
+  UserTrustPage,
   AuthenticationPage,
   CheckoutPage,
   ContactDetailsPage,
@@ -22,6 +23,7 @@ import {
   SearchPage,
   StyleguidePage,
   TermsOfServicePage,
+  FAQPage,
   TransactionPage,
 } from './containers';
 
@@ -144,7 +146,7 @@ const routeConfiguration = () => {
     {
       path: '/u',
       name: 'ProfileBasePage',
-      component: RedirectToLandingPage,
+      component: props => <RedirectToLandingPage {...props}/>,
     },
     {
       path: '/u/:id',
@@ -278,6 +280,11 @@ const routeConfiguration = () => {
       path: '/terms-of-service',
       name: 'TermsOfServicePage',
       component: props => <TermsOfServicePage {...props} />,
+    },
+    {
+      path: '/FAQ',
+      name:"FAQPage",
+      component: FAQPage
     },
     {
       path: '/privacy-policy',

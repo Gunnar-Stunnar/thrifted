@@ -16,6 +16,8 @@ import {
 } from '../../components';
 import { TopbarSearchForm } from '../../forms';
 
+import MenuIcon from './MenuIcon';
+
 import css from './TopbarDesktop.css';
 
 const TopbarDesktop = props => {
@@ -76,9 +78,14 @@ const TopbarDesktop = props => {
   const profileMenu = authenticatedOnClientSide ? (
     <Menu>
       <MenuLabel className={css.profileMenuLabel} isOpenClassName={css.profileMenuIsOpen}>
-        <Avatar className={css.avatar} user={currentUser} disableProfileLink />
+          <MenuIcon className={css.menuIcon}/>
       </MenuLabel>
       <MenuContent className={css.profileMenuContent}>
+        <MenuItem key="ManageListingsPage">
+          <div className={css.yourListingsLink}>
+          <Avatar className={css.avatar} user={currentUser} />
+          </div>
+        </MenuItem>
         <MenuItem key="ManageListingsPage">
           <NamedLink
             className={classNames(css.yourListingsLink, currentPageClass('NewListingPage'))}
@@ -143,6 +150,14 @@ const TopbarDesktop = props => {
 
   return (
     <nav className={classes}>
+      <div className={css.leftNav}>
+        <div className={css.leftNavObject}>
+          {profileMenu}
+          {signupLink}
+          {loginLink}
+          {inboxLink}
+        </div>
+      </div>
       <NamedLink className={css.logoLink} name="LandingPage">
         <Logo
           format="desktop"
@@ -150,17 +165,13 @@ const TopbarDesktop = props => {
           alt={intl.formatMessage({ id: 'TopbarDesktop.logo' })}
         />
       </NamedLink>
-      {search}
-
+        {search}
       {/*<NamedLink className={css.createListingLink} name="NewListingPage">
         <span className={css.createListing}>
           <FormattedMessage id="TopbarDesktop.createListing" />
         </span>
   </NamedLink>*/}
-      {inboxLink}
-      {profileMenu}
-      {signupLink}
-      {loginLink}
+
     </nav>
   );
 };

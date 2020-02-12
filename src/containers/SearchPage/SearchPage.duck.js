@@ -160,7 +160,6 @@ export const searchListings = searchParams => (dispatch, getState, sdk) => {
     per_page: perPage,
   };
 
-  console.log(params);
 
   return sdk.listings
     .query(params)

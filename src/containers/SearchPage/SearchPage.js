@@ -58,7 +58,7 @@ export class SearchPageComponent extends Component {
       //amenities,
       priceFilterConfig,
       sizeFilterConfig,
-
+      subCategoryConfig,
       //dateRangeFilterConfig,
       keywordFilterConfig,
     } = this.props;
@@ -75,6 +75,7 @@ export class SearchPageComponent extends Component {
       },
       subCategoryFilter: {
         paramName: 'pub_category',
+        options: subCategoriesConfig
       },
       priceFilter: {
         paramName: 'price',
@@ -254,7 +255,7 @@ SearchPageComponent.defaultProps = {
   searchParams: {},
   tab: 'listings',
   categories: config.custom.categories,
-  //subCategoriesConfig:config.custom.subCategory,
+  subCategoriesConfig:config.custom.subCategory,
   //amenities: config.custom.amenities,
   priceFilterConfig: config.custom.priceFilterConfig,
   //dateRangeFilterConfig: config.custom.dateRangeFilterConfig,

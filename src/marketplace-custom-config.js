@@ -14,15 +14,15 @@ export const size = [
     label:'XS'
   },
   {
-    key:"small",
+    key:"s",
     label:'small'
   },
   {
-    key:"medium",
+    key:"m",
     label:'Medium'
   },
   {
-    key:"large",
+    key:"l",
     label:'Large'
   },
   {
@@ -83,6 +83,10 @@ export const categories = [
       { key: 'women-shirts', label: 'Shirts',},
       { key: 'bottoms', label: 'Bottoms',},
       { key: 'denim', label: 'Denim',},
+      { key: 'womens-jackets', label: 'Women\'s jackets',},
+      { key: 'womens-overalls', label: 'Women\'s Overalls',},
+      { key: 'dresses', label:'Dresses' },
+      { key: 'swim-and-accessories', label:'Swim and Accessories'}
 
     ],
   },
@@ -118,6 +122,36 @@ export const categories = [
     ]
   }
 ];
+
+export const subCategory = [
+  { key: 'pants', label: 'Pants',},
+  { key: 'men-shirts', label: 'Shirts',},
+  { key: 'men-jackets', label: 'Jackets',},
+  { key: 'men-overalls', label:'overalls' },
+  { key: 'hats', label:'hats'},
+  { key: 'women-shirts', label: 'Shirts',},
+  { key: 'bottoms', label: 'Bottoms',},
+  { key: 'denim', label: 'Denim',},
+  { key: 'womens-jackets', label: 'Women\'s jackets',},
+  { key: 'womens-overalls', label: 'Women\'s Overalls',},
+  { key: 'dresses', label:'Dresses' },
+  { key: 'swim-and-accessories', label:'Swim and Accessories'},
+  { key: 'rock-climbing', label: 'Rock Climbing' },
+  { key: 'ski-and-snow', label: 'Ski and Snow' },
+  { key: 'camping-and-hiking', label:'Camping and Hiking'},
+  { key: 'wheels', label: 'Wheels' },
+  { key: 'nets-balls-and-bats', label: 'Nets, Balls, And Bats' },
+  { key: 'school-spirit-wear', label: 'School Spirit Wear' },
+  { key: 'retro-ski-gear', label: 'Retro Ski Gear' },
+  { key: '70-s-disco', label: '70\'s Disco' },
+  { key: '90-s-grunge', label: '90\'s Grunge' },
+  { key: 'funky-printed-shirts', label: 'Funky Printed Shirts' },
+  { key: 'sneakers', label: 'sneakers' },
+  { key: 'high-heels', label: 'high heels' },
+  { key: 'sandals', label: 'sandals' },
+  { key: 'boots', label: 'boots' },
+  { key: 'dress shoes', label: 'flats' }
+  ];
 
 /*
 export const subCategory = {
@@ -176,4 +210,12 @@ export const dateRangeFilterConfig = {
 // You can turn off ordering by distance in config.js file
 export const keywordFilterConfig = {
   active: true,
+};
+
+export const itemFeatureList = {
+  "shoe-size":"ListingPage.featuresTitleShoeSize",
+  size:"ListingPage.featuresTitleSize",
+  condition:"ListingPage.featuresTitleCondition",
+  brand:"ListingPage.featuresTitleBrand",
+  color:"ListingPage.featuresTitleColor"
 };

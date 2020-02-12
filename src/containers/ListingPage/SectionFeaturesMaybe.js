@@ -5,12 +5,11 @@ import { PropertyGroup } from '../../components';
 import css from './ListingPage.css';
 
 const SectionFeaturesMaybe = props => {
-  const { options, publicData, FeatureNameId, itemsFeatureName} = props;
+  const { publicData, FeatureNameId, itemsFeatureName} = props;
   if (!publicData) {
     return null;
   }
   console.log(publicData);
-  const selectedOptions = publicData && publicData[itemsFeatureName] ? publicData[itemsFeatureName] : [];
   return itemsFeatureName ? (
     <div className={css.sectionFeatures}>
         <h2 className={css.featuresTitle}>
@@ -18,8 +17,8 @@ const SectionFeaturesMaybe = props => {
         </h2>
         <PropertyGroup
         id="ListingPage.features"
-        options={options}
-        selectedOptions={selectedOptions}
+        publicData={publicData}
+        selectedOptions={itemsFeatureName}
         twoColumns={true}
         />
     </div>

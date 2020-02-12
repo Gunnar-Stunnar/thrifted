@@ -28,8 +28,7 @@ const initialValue = (queryParams, paramName) => {
 
 // resolve initial values for a multi value filter
 const initialValues = (queryParams, paramName) => {
-   console.log(queryParams);
-  return !!queryParams[paramName] ? queryParams[paramName].split(',') : [];
+  return queryParams[paramName] ? queryParams[paramName].split(',') : [];
 };
 
 const initialPriceRangeValue = (queryParams, paramName) => {
@@ -82,8 +81,6 @@ const SearchFiltersComponent = props => {
     ? initialValue(urlQueryParams, categoryFilter.paramName)
     : null;
 
-  console.log(subCategoryFilter.paramName);
-
   const initialSubCategory = subCategoryFilter
     ? initialValues(urlQueryParams, subCategoryFilter.paramName)
     : null;
@@ -118,6 +115,34 @@ const SearchFiltersComponent = props => {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   };
 
+  const enableSubCata = (opt) => {
+
+    //console.log(categoryFilter.options);
+    //console.log(opt);
+
+    const indexOfOpt = categoryFilter.options.findIndex((item) => {
+      return item.key === opt;
+    });
+
+    //console.log(indexOfOpt);
+
+    return categoryFilter.options[indexOfOpt].subCategories.map((e) =>{
+      return e.key
+    }).join(",");
+  };
+
+
+  const handleSelectOptionParent = (urlParam, option) => {
+    // queries set of  option
+    // if no option is passed, clear the selection for the filter
+    const queryParams = option
+      ? { ...urlQueryParams, [urlParam]: option, [subCategoryFilter.paramName]:enableSubCata(option) }
+      : omit(urlQueryParams, urlParam);
+
+
+    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
+  };
+
   const handlePrice = (urlParam, range) => {
     const { minPrice, maxPrice } = range || {};
     const queryParams =
@@ -142,7 +167,7 @@ const SearchFiltersComponent = props => {
     <SelectSingleFilter
       urlParam={categoryFilter.paramName}
       label={categoryLabel}
-      onSelect={handleSelectOption}
+      onSelect={handleSelectOptionParent}
       showAsPopup
       options={categoryFilter.options}
       initialValue={initialCategory}
@@ -168,7 +193,7 @@ const SearchFiltersComponent = props => {
       onSubmit={handleSelectOptions}
       showAsPopup
       options={categoryFilter.options[index].subCategories}
-      initialValue={initialSubCategory}
+      initialValues={initialSubCategory}
       contentPlacementOffset={FILTER_DROPDOWN_OFFSET}
     />
 ) : null;

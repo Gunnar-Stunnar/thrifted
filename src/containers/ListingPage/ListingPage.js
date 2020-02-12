@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import config from '../../config';
 import routeConfiguration from '../../routeConfiguration';
+import { itemFeatureList } from '../../marketplace-custom-config';
 import { LISTING_STATE_PENDING_APPROVAL, LISTING_STATE_CLOSED, propTypes } from '../../util/types';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import {
@@ -361,6 +362,27 @@ export class ListingPageComponent extends Component {
       { title, price: formattedPrice, siteTitle }
     );
 
+    const features = (pubData, featName,featNameId ) =>{
+      return (<SectionFeaturesMaybe
+        publicData={pubData} itemsFeatureName={featName} FeatureNameId={featNameId}
+      />)
+    };
+
+
+
+
+    const featureObject = (pubData) =>{
+
+
+
+      return pubData? Object.keys(pubData).map((feature => {
+        if(itemFeatureList[feature]){
+          return features(pubData, feature, itemFeatureList[feature])
+        }
+      })):null;
+
+    };
+
     const hostLink = (
       <NamedLink
         className={css.authorNameLink}
@@ -371,6 +393,8 @@ export class ListingPageComponent extends Component {
         {authorDisplayName}
       </NamedLink>
     );
+
+    const featureDOM = featureObject(publicData);
 
     const category =
       publicData && publicData.category ? (
@@ -432,16 +456,11 @@ export class ListingPageComponent extends Component {
                     /*
                     To add a new section feature, add its config  and make sure its in the public data and follow the sectionFeatures bellow V
                      */
+                    featureDOM ? featureDOM: null
                   }
-                    <SectionFeaturesMaybe
-                      options={conditionConfig} publicData={publicData} itemsFeatureName={"condition"} FeatureNameId={'ListingPage.featuresTitleCondition'}
-                    />
-                    <SectionFeaturesMaybe
-                      options={sizeConfig} publicData={publicData} itemsFeatureName={"Size"} FeatureNameId={'ListingPage.featuresTitleSize'}
-                    />
-                    <SectionFeaturesMaybe
-                      options={sizeConfig} publicData={publicData} itemsFeatureName={"Size"} FeatureNameId={'ListingPage.featuresTitleSize'}
-                    />
+
+
+
                 </div>
                   <SectionDescriptionMaybe description={description}/>
 

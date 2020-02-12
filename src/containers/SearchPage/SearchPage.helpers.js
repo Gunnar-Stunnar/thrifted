@@ -21,6 +21,7 @@ export const validURLParamForExtendedData = (paramName, paramValueRaw, filters) 
   const paramValue = paramValueRaw.toString();
   const valueArray = paramValue ? paramValue.split(',') : [];
 
+
   if (filterConfig && valueArray.length > 0) {
     const { min, max, active } = filterConfig.config || {};
 
@@ -29,6 +30,8 @@ export const validURLParamForExtendedData = (paramName, paramValueRaw, filters) 
       const allowedValues = filterConfig.options.map(o => o.key);
 
       const validValues = intersection(valueArray, allowedValues).join(',');
+      //console.log(validValues.length, "---------------------");
+
       return validValues.length > 0 ? { [paramName]: validValues } : {};
     } else if (filterConfig.config && min != null && max != null) {
       // Price filter
@@ -53,8 +56,12 @@ export const validURLParamForExtendedData = (paramName, paramValueRaw, filters) 
  * @param {Object} filters Filters configuration
  */
 export const validFilterParams = (params, filters) => {
+
+
   const filterParamNames = Object.values(filters).map(f => f.paramName);
   const paramEntries = Object.entries(params);
+
+
 
   return paramEntries.reduce((validParams, entry) => {
     const paramName = entry[0];

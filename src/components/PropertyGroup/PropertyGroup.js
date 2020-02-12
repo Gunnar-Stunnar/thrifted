@@ -13,18 +13,27 @@ import includes from 'lodash/includes';
 
 import css from './PropertyGroup.css';
 
-const checkSelected = (options, selectedOptions) => {
-  //console.log(selectedOptions);
-  let items = [];
-  options.forEach(option => {
-    if (includes(selectedOptions, option.key)) {
+const checkSelected = (publicData,selectedOptions) => {
+  console.log(typeof publicData[selectedOptions] , publicData[selectedOptions] instanceof Array);
+
+  if ((publicData[selectedOptions]) instanceof Array){
+    let items = [];
+    let key = 0;
+    publicData[selectedOptions].forEach(option => {
+
       items.push({
-        key: option.key,
-        label: option.label
+        key: `${selectedOptions}-${key}`,
+        label: option
       });
-    }
-  });
-  return items;
+      key++;
+    });
+    return items;
+  }
+
+  return [{
+    key:`${selectedOptions}-${0}`,
+    label: publicData[selectedOptions]
+  }];
 };
 
 
@@ -41,12 +50,12 @@ const Item = props => {
 };
 
 const PropertyGroup = props => {
-  const { rootClassName, className, id, options, selectedOptions, twoColumns } = props;
+  const { rootClassName, className, id, publicData, selectedOptions, twoColumns } = props;
   const classes = classNames(rootClassName || css.root, className);
   const listClasses = twoColumns ? classNames(classes, css.twoColumns) : classes;
 
-  const checked = checkSelected(options, selectedOptions);
-  //console.log(checked);
+  const checked = checkSelected(publicData, selectedOptions);
+  console.log(checked);
   return (
     <ul className={listClasses}>
       {checked.map(option => (
