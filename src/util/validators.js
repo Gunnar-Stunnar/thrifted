@@ -108,7 +108,7 @@ const EMAIL_RE = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const UNIV_RE = /^[A-Z0-9._%+-]+@colorado.edu$/i;
 
 export const emailFormatValid = (msg2) => value => {
-  return value && UNIV_RE.test(value) ? VALID : msg2;
+  return value && EMAIL_RE.test(value) ? VALID : msg2;
 };
 
 
