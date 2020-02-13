@@ -11,6 +11,12 @@
   z-index: 1;
 }
 
+.subCategory{
+  height: 100%;
+  transition: height 2s;
+}
+
+
 .searchResultSummary {
   @apply --marketplaceH3FontStyles;
   margin-top: 6px;

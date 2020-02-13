@@ -716,6 +716,7 @@
   "SearchFiltersMobile.categoryLabel": "Category",
   "SearchFiltersMobile.keywordLabel": "Keyword",
   "SearchFiltersMobile.resetAll": "Reset all",
+  "SearchFiltersMobile.subCategory": "Category Filter",
   "SearchFiltersMobile.showListings": "Show {count, number} {count, plural, one {Item} other {Items}}",
   "SearchFiltersPanel.apply": "Apply",
   "SearchFiltersPanel.cancel": "Cancel",

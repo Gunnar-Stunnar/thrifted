@@ -11,11 +11,11 @@ import { createResourceLocatorString } from '../../util/routes';
 import {
   ModalInMobile,
   Button,
-  KeywordFilter,
+  //KeywordFilter,
   PriceFilter,
   SelectSingleFilter,
-  //SelectMultipleFilter,
-  BookingDateRangeFilter,
+  SelectMultipleFilter,
+  //BookingDateRangeFilter,
 } from '../../components';
 import { propTypes } from '../../util/types';
 import css from './SearchFiltersMobile.css';
@@ -129,6 +129,45 @@ class SearchFiltersMobileComponent extends Component {
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
   }
 
+  enableSubCata = (opt, categoryFilter) => {
+
+    //console.log(categoryFilter.options);
+    //console.log(opt);
+    const initialCategory = categoryFilter ? this.initialValue(categoryFilter.paramName) : null;
+
+    let index = -1;
+
+    categoryFilter.options.find(function(item, i){
+      if(item.key === initialCategory){
+        index = i;
+        return i;
+      }
+    });
+    const indexOfOpt = categoryFilter.options.findIndex((item) => {
+      return item.key === opt;
+    });
+
+    //console.log(indexOfOpt);
+
+    return categoryFilter.options[indexOfOpt].subCategories.map((e) =>{
+      return e.key
+    }).join(",");
+  };
+
+  handleSelectOptionParent = (subCategoryFilter, CategoryFilter) => (urlParam, option) => {
+    const { urlQueryParams, history } = this.props;
+    // queries set of  option
+    // if no option is passed, clear the selection for the filter
+    const queryParams = option
+      ? { ...urlQueryParams, [urlParam]: option, [subCategoryFilter.paramName]:this.enableSubCata(option,CategoryFilter) }
+      : omit(urlQueryParams, urlParam);
+
+
+    history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
+  };
+
+
+
   // Reset all filter query parameters
   resetAll(e) {
     const { urlQueryParams, history, filterParamNames } = this.props;
@@ -193,11 +232,12 @@ class SearchFiltersMobileComponent extends Component {
       onManageDisableScrolling,
       selectedFiltersCount,
       categoryFilter,
+      subCategoryFilter,
       //amenitiesFilter,
       priceFilter,
       sizeFilter,
-      dateRangeFilter,
-      keywordFilter,
+      //dateRangeFilter,
+      //keywordFilter,
       intl,
     } = this.props;
 
@@ -230,6 +270,10 @@ class SearchFiltersMobileComponent extends Component {
     });
     const initialCategory = categoryFilter ? this.initialValue(categoryFilter.paramName) : null;
 
+    const initialSubCategory = subCategoryFilter
+      ? this.initialValues(subCategoryFilter.paramName)
+      : null;
+
     const initialSize = sizeFilter
       ? this.initialValue(sizeFilter.paramName)
       : null;
@@ -239,13 +283,37 @@ class SearchFiltersMobileComponent extends Component {
       <SelectSingleFilter
         urlParam={categoryFilter.paramName}
         label={categoryLabel}
-        onSelect={this.handleSelectSingle}
+        onSelect={this.handleSelectOptionParent(subCategoryFilter, categoryFilter)}
         liveEdit
         options={categoryFilter.options}
         initialValue={initialCategory}
         intl={intl}
       />
     ) : null;
+
+    const subCategoryLabel = intl.formatMessage({ id: 'SearchFiltersMobile.subCategory' });
+    let index = -1;
+
+    categoryFilter.options.find(function(item, i){
+      if(item.key === initialCategory){
+        index = i;
+        return i;
+      }
+    });
+
+    const subCategoryFilterElement =  initialCategory ? (
+      <SelectMultipleFilter
+        id="SearchFiltersMobile.subCategory"
+        name="subCategories"
+        className={css.subCategory}
+        urlParam={subCategoryFilter.paramName}
+        label={subCategoryLabel}
+        onSubmit={this.handleSelectMultiple}
+        liveEdit
+        options={categoryFilter.options[index].subCategories}
+        initialValues={initialSubCategory}
+      />
+    ) :null;
 
     /*
     const amenitiesLabel = intl.formatMessage({ id: 'SearchFiltersMobile.amenitiesLabel' });
@@ -306,6 +374,7 @@ class SearchFiltersMobileComponent extends Component {
         />
       ) : null;
 */
+/*
     const initialKeyword = this.initialValue(keywordFilter.paramName);
     const keywordLabel = intl.formatMessage({
       id: 'SearchFiltersMobile.keywordLabel',
@@ -323,6 +392,7 @@ class SearchFiltersMobileComponent extends Component {
           initialValues={initialKeyword}
         />
       ) : null;
+      */
 
     return (
       <div className={classes}>
@@ -353,8 +423,10 @@ class SearchFiltersMobileComponent extends Component {
           </div>
           {this.state.isFiltersOpenOnMobile ? (
             <div className={css.filtersWrapper}>
-              {keywordFilterElement}
+              {//keywordFilterElement
+              }
               {categoryFilterElement}
+              {subCategoryFilterElement}
               {//amenitiesFilterElement
               }
               {SizeFilterElement}
@@ -384,6 +456,7 @@ SearchFiltersMobileComponent.defaultProps = {
   filterParamNames: [],
   categoryFilter: null,
   amenitiesFilter: null,
+  subCategoryFilter:null,
   priceFilter: null,
   sizeFilter: null,
 };
@@ -403,6 +476,7 @@ SearchFiltersMobileComponent.propTypes = {
   selectedFiltersCount: number,
   filterParamNames: array,
   categoriesFilter: propTypes.filterConfig,
+  subCategoryFilter: propTypes.filterConfig,
   priceFilter: propTypes.filterConfig,
   sizeFilter:propTypes.filterConfig,
 
