@@ -63,6 +63,7 @@ const EditListingDescriptionPanel = props => {
         updateInProgress={updateInProgress}
         fetchErrors={errors}
         categories={config.custom.categories}
+        subCategories={config.custom.subCategory}
       />
     </div>
   );

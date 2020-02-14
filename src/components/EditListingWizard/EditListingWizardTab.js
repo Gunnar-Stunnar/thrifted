@@ -20,7 +20,6 @@ import {
 
 import css from './EditListingWizard.css';
 
-export const AVAILABILITY = 'availability';
 export const DESCRIPTION = 'description';
 export const FEATURES = 'features';
 export const TAGS = 'tags';
@@ -33,7 +32,6 @@ export const SUPPORTED_TABS = [
   FEATURES,
   TAGS,
   PRICING,
-  AVAILABILITY,
   PHOTOS,
 ];
 
@@ -78,7 +76,6 @@ const EditListingWizardTab = props => {
     newListingPublished,
     history,
     images,
-    availability,
     listing,
     handleCreateFlowTabScrolling,
     handlePublishListing,
@@ -203,21 +200,6 @@ const EditListingWizardTab = props => {
       return (
         <EditListingPricingPanel
           {...panelProps(PRICING)}
-          submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
-          onSubmit={values => {
-            onCompleteEditListingWizardTab(tab, values);
-          }}
-        />
-      );
-    }
-    case AVAILABILITY: {
-      const submitButtonTranslationKey = isNewListingFlow
-        ? 'EditListingWizard.saveNewAvailability'
-        : 'EditListingWizard.saveEditAvailability';
-      return (
-        <EditListingAvailabilityPanel
-          {...panelProps(AVAILABILITY)}
-          availability={availability}
           submitButtonText={intl.formatMessage({ id: submitButtonTranslationKey })}
           onSubmit={values => {
             onCompleteEditListingWizardTab(tab, values);

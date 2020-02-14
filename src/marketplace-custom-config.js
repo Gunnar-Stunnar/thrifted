@@ -22,7 +22,7 @@ export const size = [
     label:'Medium'
   },
   {
-    key:"l",
+    key:"large",
     label:'Large'
   },
   {
@@ -83,8 +83,8 @@ export const categories = [
       { key: 'women-shirts', label: 'Shirts',},
       { key: 'bottoms', label: 'Bottoms',},
       { key: 'denim', label: 'Denim',},
-      { key: 'womens-jackets', label: 'Women\'s jackets',},
-      { key: 'womens-overalls', label: 'Women\'s Overalls',},
+      { key: 'womens-jackets', label: 'jackets',},
+      { key: 'womens-overalls', label: 'Overalls',},
       { key: 'dresses', label:'Dresses' },
       { key: 'swim-and-accessories', label:'Swim and Accessories'}
 

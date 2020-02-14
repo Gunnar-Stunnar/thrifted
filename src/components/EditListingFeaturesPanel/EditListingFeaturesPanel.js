@@ -10,7 +10,7 @@ import { ListingLink } from '../../components';
 
 import css from './EditListingFeaturesPanel.css';
 
-const FEATURES_NAME = 'condition';
+const FEATURES_NAME = 'Features';
 
 const EditListingFeaturesPanel = props => {
   const {
@@ -42,7 +42,8 @@ const EditListingFeaturesPanel = props => {
   );
 
   const condition = publicData && publicData.condition;
-  const initialValues = { condition };
+  const category = publicData && publicData.category;
+  const initialValues = { condition, category };
 
   return (
     <div className={classes}>
@@ -52,10 +53,11 @@ const EditListingFeaturesPanel = props => {
         name={FEATURES_NAME}
         initialValues={initialValues}
         onSubmit={values => {
-          const { condition = [] } = values;
-
+          console.log(values);
+          const { condition = "" } = values;
+          const {category = null} = values;
           const updatedValues = {
-            publicData: { condition },
+            publicData: { condition, category },
           };
           onSubmit(updatedValues);
         }}

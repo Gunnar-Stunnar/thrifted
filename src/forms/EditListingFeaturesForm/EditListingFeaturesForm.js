@@ -10,6 +10,8 @@ import config from '../../config';
 import { Button, FieldCheckboxGroup, Form } from '../../components';
 
 import css from './EditListingFeaturesForm.css';
+import FieldSelect from '../../components/FieldSelect/FieldSelect';
+import { required } from '../../util/validators';
 
 const EditListingFeaturesFormComponent = props => (
   <FinalForm
@@ -48,17 +50,42 @@ const EditListingFeaturesFormComponent = props => (
         </p>
       ) : null;
 
+
+
+      const categoryRequired = required(
+        <FormattedMessage
+          id = 'EditListingFeaturesForm.conditionRequired'/>
+      );
+      const categoryBuilder = (catgor) => {
+
+        return catgor.map((subC) => (
+            <option key={subC.key} value={subC.key}>
+              {subC.label}
+            </option>
+          )
+        )
+
+      };
+
       return (
         <Form className={classes} onSubmit={handleSubmit}>
           {errorMessage}
           {errorMessageShowListing}
 
-          <FieldCheckboxGroup
+          <FieldSelect
             className={css.features}
-            id={name}
-            name={name}
-            options={config.custom.condition}
-          />
+            id={"condition"}
+            name={"condition"}
+            label="Items current condition:"
+            validate={categoryRequired}>
+            <option disabled value="">
+             Choose the condition of your item...
+            </option>
+            {
+              categoryBuilder(config.custom.condition)
+            }
+          </FieldSelect>
+
 
           <Button
             className={css.submitButton}
