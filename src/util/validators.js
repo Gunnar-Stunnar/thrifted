@@ -109,7 +109,7 @@ const UNIV_RE = /^[A-Z0-9._%+-]+@colorado.edu$/i;
 const THRIFT_RE = /^[A-Z0-9._%+-]+@thrifted\.app$/i;
 
 export const emailFormatValid = (msg2) => value => {
-  return value && UNIV_RE.test(value) && THRIFT_RE.test(value) ? VALID : msg2;
+  return value && UNIV_RE.test(value) || THRIFT_RE.test(value) ? VALID : msg2;
 };
 
 
