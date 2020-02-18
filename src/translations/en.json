@@ -70,7 +70,7 @@
   "BookingDatesForm.requestToBook": "Buy",
   "BookingDatesForm.requiredDate": "Oops, make sure your date is correct!",
   "BookingDatesForm.timeSlotsError": "Loading listing availability failed. Please refresh the page.",
-  "BookingDatesForm.youWontBeChargedInfo": "You won't be charged yet",
+  "BookingDatesForm.youWontBeChargedInfo": "You will be charged",
   "BiddingForm.bidPlaceholder": "Your bid",
   "BiddingForm.translationKey": "Offer",
   "BookingDateRangeFilter.labelPlain": "Dates",
