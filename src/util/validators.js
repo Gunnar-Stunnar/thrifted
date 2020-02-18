@@ -106,9 +106,10 @@ export const bookingDatesRequired = (inValidStartDateMessage, inValidEndDateMess
 // See the link above for an explanation of the tradeoffs.
 const EMAIL_RE = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 const UNIV_RE = /^[A-Z0-9._%+-]+@colorado.edu$/i;
+const THRIFT_RE = /^[A-Z0-9._%+-]+@thrifted\.app$/i;
 
 export const emailFormatValid = (msg2) => value => {
-  return value && EMAIL_RE.test(value) ? VALID : msg2;
+  return value && UNIV_RE.test(value) && THRIFT_RE.test(value) ? VALID : msg2;
 };
 
 
