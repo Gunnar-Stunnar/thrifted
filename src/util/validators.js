@@ -112,6 +112,9 @@ export const emailFormatValid = (msg2) => value => {
   return value && UNIV_RE.test(value) || THRIFT_RE.test(value) ? VALID : msg2;
 };
 
+export const emailFormatValidLogin = (msg) => value => {
+  return value && EMAIL_RE ? VALID: msg;
+};
 
 export const moneySubUnitAmountAtLeast = (message, minValue) => value => {
   return value instanceof Money && value.amount >= minValue ? VALID : message;

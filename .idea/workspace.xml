@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="504b7487-178f-494d-8a05-e54b4bf69819" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/forms/LoginForm/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/forms/LoginForm/LoginForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/util/validators.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/validators.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -38,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/forms/SignupForm/SignupForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2075">
-              <caret line="46" column="76" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="76" />
+            <state relative-caret-position="184">
+              <caret line="118" column="15" selection-start-line="118" selection-start-column="15" selection-end-line="118" selection-end-column="15" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -48,28 +49,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ducks/EmailVerification.duck.js">
+        <entry file="file://$PROJECT_DIR$/src/translations/en.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/util/validators.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="184">
+              <caret line="753" column="30" selection-start-line="753" selection-start-column="3" selection-end-line="753" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/ResponsiveImage/ResponsiveImage.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/util/validators.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/forms/LoginForm/LoginForm.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -119,9 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>TopbarDesktop</find>
-      <find>FAQ</find>
-      <find>About</find>
       <find>about</find>
       <find>coverImage</find>
       <find>imageContainer</find>
@@ -149,6 +149,9 @@
       <find>.rootForImage</find>
       <find>You won't be charged yet</find>
       <find>colorado.edu</find>
+      <find>SignupForm.emailUnivInvalid</find>
+      <find>login</find>
+      <find>emailFormatValid</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -209,6 +212,7 @@
         <option value="$PROJECT_DIR$/src/translations/en.json" />
         <option value="$PROJECT_DIR$/src/containers/ListingPage/ListingPage.css" />
         <option value="$PROJECT_DIR$/src/util/validators.js" />
+        <option value="$PROJECT_DIR$/src/forms/LoginForm/LoginForm.js" />
       </list>
     </option>
   </component>
@@ -343,18 +347,18 @@
       <updated>1581362825309</updated>
       <workItem from="1581362826528" duration="64686000" />
       <workItem from="1581985670504" duration="5385000" />
-      <workItem from="1582058695274" duration="419000" />
+      <workItem from="1582058695274" duration="1027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70490000" />
+    <option name="totallyTimeSpent" value="71098000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24954791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -368,7 +372,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.36020407" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.36020407" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -409,13 +413,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/SearchFiltersMobile/SearchFiltersMobile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="23" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FieldCheckbox/FieldCheckbox.example.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-54">
@@ -690,13 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/translations/en.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="63" selection-start-line="72" selection-start-column="63" selection-end-line="72" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ResponsiveImage/ResponsiveImage.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -735,19 +725,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/forms/EmailVerificationForm/EmailVerificationForm.js">
+    <entry file="file://$PROJECT_DIR$/src/translations/en.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="753" column="30" selection-start-line="753" selection-start-column="3" selection-end-line="753" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/forms/SignupForm/SignupForm.js">
+    <entry file="file://$PROJECT_DIR$/src/forms/EmailVerificationForm/EmailVerificationForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2075">
-          <caret line="46" column="76" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="76" />
+        <state>
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -763,10 +750,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/SignupForm/SignupForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="118" column="15" selection-start-line="118" selection-start-column="15" selection-end-line="118" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/util/validators.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="113" lean-forward="true" selection-start-line="113" selection-end-line="113" />
+        <state relative-caret-position="231">
+          <caret line="110" column="13" lean-forward="true" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forms/LoginForm/LoginForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="41" column="17" lean-forward="true" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
         </state>
       </provider>
     </entry>

@@ -37,7 +37,7 @@ const LoginFormComponent = props => (
       const emailInvalidMessage = intl.formatMessage({
         id: 'LoginForm.emailInvalid',
       });
-      const emailValid = validators.emailFormatValid(emailInvalidMessage);
+      const emailValid = validators.emailFormatValidLogin(emailInvalidMessage);
 
       // password
       const passwordLabel = intl.formatMessage({
