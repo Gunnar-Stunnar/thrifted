@@ -59,7 +59,7 @@ const imageUpload = function(req, res, next) {
     convert({
       buffer: req.file.buffer, // the HEIC file buffer
       format: 'JPEG',      // output format
-      quality: 1           // the jpeg compression quality, between 0 and 1
+      quality: 0.5           // the jpeg compression quality, between 0 and 1
     })
       .then((outputBuffer) => {
         cloudUpload(outputBuffer, res);
