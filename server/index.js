@@ -148,6 +148,12 @@ const httpsAgent = new https.Agent({ keepAlive: true });
 app.use(express.json());
 app.use('/api',APIRoutes);
 
+console.log("Establish tmp file....");
+fs.promises.mkdir("./tmp", { recursive: true }).then(()=>{
+  console.log("Created tmp file");
+});
+
+
 app.get('*', (req, res) => {
   if (req.url.startsWith('/static/')) {
     // The express.static middleware only handles static resources
