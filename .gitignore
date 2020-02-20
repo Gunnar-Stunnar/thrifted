@@ -10,7 +10,7 @@ coverage
 build
 
 #workSpace
-./idea
+.idea
 
 # misc
 .DS_Store
