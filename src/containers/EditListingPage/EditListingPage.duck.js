@@ -1,4 +1,5 @@
 import omit from 'lodash/omit';
+import axios from 'axios';
 import { types as sdkTypes } from '../../util/sdkLoader';
 import { denormalisedResponseEntities, ensureAvailabilityException } from '../../util/data';
 import { isSameDate, monthIdStringInUTC } from '../../util/dates';
@@ -542,9 +543,13 @@ export function requestImageUpload(actionPayload) {
   return (dispatch, getState, sdk) => {
     const id = actionPayload.id;
     dispatch(uploadImage(actionPayload));
-    return sdk.images
-      .upload({ image: actionPayload.file })
-      .then(resp => dispatch(uploadImageSuccess({ data: { id, imageId: resp.data.data.id } })))
+    //console.log(actionPayload.file);
+    const data = new FormData()
+    data.append('addimage', actionPayload.file);
+    return axios.post("/api/imageUpload", data, {})
+    /*return sdk.images data.data.id.uuid
+      .upload({ image: actionPayload.file })*/
+      .then(resp => {dispatch(uploadImageSuccess({ data: { id, imageId: resp.data.data.id } }))})
       .catch(e => dispatch(uploadImageError({ id, error: storableError(e) })));
   };
 }
@@ -653,6 +658,7 @@ export function requestUpdateListing(tab, data) {
     dispatch(updateListing(data));
     const { id } = data;
     let updateResponse;
+    //console.log(data,"---------------------------------------");
     return sdk.ownListings
       .update(data)
       .then(response => {
