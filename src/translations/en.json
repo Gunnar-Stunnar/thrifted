@@ -959,7 +959,7 @@
   "TopbarMobileMenu.greeting": "Hello {displayName}",
   "TopbarMobileMenu.inboxLink": "Inbox",
   "TopbarMobileMenu.loginLink": "Log in",
-  "TopxfbarMobileMenu.logoutLink": "Log out",
+  "TopbarMobileMenu.logoutLink": "Log out",
   "TopbarMobileMenu.newListingLink": "+ Add your item",
   "TopbarMobileMenu.profileSettingsLink": "Profile settings",
   "TopbarMobileMenu.signupLink": "Sign up",
