@@ -20,10 +20,10 @@ const defaultDirectives = {
   connectSrc: [
     self,
     baseUrl,
-    'maps.googleapis.com',
+  /*  'maps.googleapis.com',
     '*.tiles.mapbox.com',
     'api.mapbox.com',
-    'events.mapbox.com',
+    'events.mapbox.com',*/
 
     // Google Analytics
     'www.google-analytics.com',
@@ -46,8 +46,8 @@ const defaultDirectives = {
     'lorempixel.com',
     'via.placeholder.com',
 
-    'api.mapbox.com',
-    'maps.googleapis.com',
+/*    'api.mapbox.com',
+     'maps.googleapis.com',*/
     '*.gstatic.com',
     '*.googleapis.com',
     '*.ggpht.com',
@@ -69,7 +69,7 @@ const defaultDirectives = {
     '*.google-analytics.com',
     'js.stripe.com',
   ],
-  styleSrc: [self, unsafeInline, 'fonts.googleapis.com', 'api.mapbox.com'],
+  styleSrc: [self, unsafeInline, 'fonts.googleapis.com'],
 };
 
 /**

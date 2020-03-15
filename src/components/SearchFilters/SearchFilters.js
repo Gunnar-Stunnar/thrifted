@@ -96,14 +96,20 @@ const SearchFiltersComponent = props => {
 
 
 
-  const handleSelectOptions = (urlParam, options) => {
+  const handleSelectOptions = (deleteOnNone,linkQuery) => { return (urlParam, options) => {
     const queryParams =
       options && options.length > 0
         ? { ...urlQueryParams, [urlParam]: options.join(',') }
         : omit(urlQueryParams, urlParam);
 
+    console.log(linkQuery, queryParams);
+
+      if(deleteOnNone && queryParams[linkQuery] && options){
+        delete queryParams[linkQuery];
+      }
+
     history.push(createResourceLocatorString('SearchPage', routeConfiguration(), {}, queryParams));
-  };
+  }};
 
   const handleSelectOption = (urlParam, option) => {
     // query parameters after selecting the option
@@ -135,6 +141,7 @@ const SearchFiltersComponent = props => {
   const handleSelectOptionParent = (urlParam, option) => {
     // queries set of  option
     // if no option is passed, clear the selection for the filter
+    console.log(option);
     const queryParams = option
       ? { ...urlQueryParams, [urlParam]: option, [subCategoryFilter.paramName]:enableSubCata(option) }
       : omit(urlQueryParams, urlParam);
@@ -190,7 +197,7 @@ const SearchFiltersComponent = props => {
       name="Category Filter"
       urlParam={subCategoryFilter.paramName}
       label={subCategoryLabel}
-      onSubmit={handleSelectOptions}
+      onSubmit={handleSelectOptions(true, categoryFilter.paramName)}
       showAsPopup
       options={categoryFilter.options[index].subCategories}
       initialValues={initialSubCategory}
