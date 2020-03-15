@@ -88,6 +88,15 @@ const TopbarDesktop = props => {
         </MenuItem>
         <MenuItem key="ManageListingsPage">
           <NamedLink
+            className={classNames(css.yourListingsLink, currentPageClass('SearchPage'))}
+            name="SearchPage"
+          >
+            <span className={css.menuItemBorder} />
+            <FormattedMessage id="TopbarDesktop.SearchPage" />
+          </NamedLink>
+        </MenuItem>
+        <MenuItem key="ManageListingsPage">
+          <NamedLink
             className={classNames(css.yourListingsLink, currentPageClass('NewListingPage'))}
             name="NewListingPage"
           >
@@ -124,7 +133,7 @@ const TopbarDesktop = props => {
         </MenuItem>
         <MenuItem key="ManageListingsPage">
           <NamedLink
-            className={classNames(css.yourListingsLink, currentPageClass('NewListingPage'))}
+            className={classNames(css.yourListingsLink, currentPageClass('AboutPage'))}
             name="AboutPage"
           >
             <span className={css.menuItemBorder} />
@@ -167,7 +176,7 @@ const TopbarDesktop = props => {
           {inboxLink}
         </div>
       </div>
-      <NamedLink className={css.logoLink} name="LandingPage">
+      <NamedLink className={css.logoLink} name={authenticatedOnClientSide ? "SearchPage":"LandingPage"}>
         <Logo
           format="desktop"
           className={css.logo}

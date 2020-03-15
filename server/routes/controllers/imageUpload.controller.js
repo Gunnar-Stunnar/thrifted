@@ -1,3 +1,5 @@
+"use strict";
+
 const convert = require('heic-convert');
 const { promisify } = require('util');
 const fs = require('fs');
