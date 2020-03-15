@@ -18,22 +18,21 @@ const SectionHero = props => {
     <div className={classes}>
       <div className={css.heroContent}>
 
-        <h1 className={css.heroMainTitle}>
-          <FormattedMessage id="SectionHero.title" />
-        </h1>
-
+        <NamedLink
+          name={loggedIn ? "SearchListingsPage":"SignupPage"}
+          className={css.heroButton}
+        >
+          <FormattedMessage id= {loggedIn ? "SectionHero.browseButton":"SectionHero.SignUpButton"}/>
+        </NamedLink>
         <video className={css.VideoPlayer} autoplay="autoplay" loop="loop" playsinline poster={background_lazyload} muted>
           <source src={video_thrif} type="video/webm"></source>
           Video could not load
         </video>
 
-        <NamedLink
-          name={loggedIn ? "SearchListingsPage":"SignupPage"}
-          className={css.heroButton}
-        >
+        <h1 className={css.heroMainTitle}>
+          <FormattedMessage id="SectionHero.title" />
+        </h1>
 
-          <FormattedMessage id= {loggedIn ? "SectionHero.browseButton":"SectionHero.SignUpButton"}/>
-        </NamedLink>
       </div>
     </div>
   );
